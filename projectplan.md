@@ -26,7 +26,7 @@
 
 
 ### Week 14
-- [ ] Create presentation
+- [ ] Create presentationa
 
 ### Week 15
 - [ ] Give presentation
