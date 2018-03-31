@@ -64,5 +64,34 @@
     <button type="submit" name="submit" value="search" class="btn btn-primary">Search</button>
 </form>
 
+<h3>Volume</h3>
+<form action="beforeWeight" id="beforeWgt" class="form-inline">
+
+    <select name="beforeWeightConversion">
+        <option value="oz">Ounces</option>
+        <option value="lbs">Pounds</option>
+        <option value="grains">Grains</option>
+        <option value="tons">Short Tons</option>
+        <option value="grams">Grams</option>
+        <option value="kilos">Kilograms</option>
+    </select>
+
+    <div class="form-group">
+        <label for="searchWeight">Value</label>
+        <input type="text" class="form-control" id="searchWeight" name="searchWeight" aria-describedby="searchWeightHelp" placeholder="Enter value of measurement.">
+    </div>
+
+    <select name="afterWeightConversion">
+        <option value="oz">Ounces</option>
+        <option value="lbs">Pounds</option>
+        <option value="grains">Grains</option>
+        <option value="tons">Short Tons</option>
+        <option value="grams">Grams</option>
+        <option value="kilos">Kilograms</option>
+    </select>
+
+    <button type="submit" name="submit" value="search" class="btn btn-primary">Search</button>
+</form>
+
 </body>
 </html>
