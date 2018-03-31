@@ -64,7 +64,7 @@
     <button type="submit" name="submit" value="search" class="btn btn-primary">Search</button>
 </form>
 
-<h3>Volume</h3>
+<h3>Weight</h3>
 <form action="beforeWeight" id="beforeWgt" class="form-inline">
 
     <select name="beforeWeightConversion">
