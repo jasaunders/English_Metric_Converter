@@ -12,13 +12,19 @@ import javax.ws.rs.core.Response;
 public class LengthConverter {
     // The Java method will process HTTP GET requests
     @GET
-    @Path("/text/{param}")
+    @Path("/text/{params}")
     // The Java method will produce content identified by the MIME Media type "text/plain"
     @Produces("text/plain")
-    public Response getLengthText(@PathParam("param") String name) {
+    public Response getLengthText(@PathParam("params") String name) {
         // Return a simple message
-        String output = "Hello from length text method in LengthConverter";
-        return Response.status(200).entity(output).build();
+      /*  switch (inUints) {
+            case ("in") : //some code
+                break;
+        }*/
+
+       // return Response.status(200).entity(output).build();
+
+        return null;
     }
 
     @GET
