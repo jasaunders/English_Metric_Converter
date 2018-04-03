@@ -25,6 +25,8 @@ public class LengthConverter {
             @PathParam("quantity") double quantity) {
 
         convertUnits(inUnit, outUnit, quantity);
+        //determine if error in output output.length > 0?
+        //if length = 0, then do this:
         output += quantity + " " + inUnit + " =  " + convertedQuantity + " " + outUnit; // call format text function
 
         return Response.status(200).entity(output).build();
@@ -82,7 +84,8 @@ public class LengthConverter {
                 break;
             case ("km") : convertKM(quantity, outUnit);
                 break;
-            default : output = "error converting inches in plain text";
+            default : output = "error determining input units.";
+
         }
     }
 
