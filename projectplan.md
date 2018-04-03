@@ -1,36 +1,18 @@
 
 ### Week 10
-- [ ] Get github working
-- [ ] Create project plan
-- [ ] Create problem statement
-
-
+- [X] Create repository and push to github
+- [X] Create project plan
+- [X] Create problem statement
+- [X] Design Screen Layout
+- [X] Create Stub for JSPs
 ### Week 11
-- [ ] Design Screen Layout
-- [ ] Create Stub for JSPs
-- [ ] Create Stub for Classes
-- [ ] Login screen
-
-
-
-### Week 12
-- [ ] Maven
-- [ ] Logger
-- [ ] Unit testing
-- [ ] Code logic for front end
+- [X] Create Stub for Classes
+- [X] Code logic for front end
 - [ ] Code logic for back end
-
-
-### Week 13
+- [ ] Unit testing
+- [ ] Code script or servlet to access api and return data
+### Week 12
+- [ ] Java Documentation
+- [ ] User Documentation
 - [ ] Upload to AWS
-
-
-### Week 14
-- [ ] Create presentationa
-
-### Week 15
-- [ ] Give presentation
-
-
-### Week 16
-- [ ] Wrap up loose ends
+- [ ] Presentation
