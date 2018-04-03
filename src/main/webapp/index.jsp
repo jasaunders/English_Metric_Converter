@@ -1,5 +1,26 @@
 <%@include file="head.jsp"%>
 <html>
+    <head>
+        <script type="text/javascript">
+            function populate(s1, s2) {
+                s1 = document.getElementById(s1);
+                s2 = document.getElementById(s2);
+                s2.innerHTML = "";
+                var optionArray = ["|", "inches|Inches", "feet|Feet", "yards|Yards", "miles|Miles",
+                    "mm|Millimeters", "cm|Centimeters", "meters|Meters", "km|Kilometers"];
+
+                for(var option in optionArray) {
+                    var pair = optionArray[option].split("|");
+                    var newOption = document.createElement("option");
+                    newOption.value = pair[0];
+                    newOption.innerHTML = pair[1];
+                    if (s1.value !== newOption.value)
+                        s2.options.add(newOption);
+
+                }
+            }
+        </script>
+    </head>
 <body>
 
 <div>
@@ -10,9 +31,10 @@
         <div class="col-sm-6" style="background-color:lavenderblush;">
             <h2>Measurement Converters</h2>
             <h3>Length</h3>
-            <form action="beforeLength" id="beforeLen" class="form-inline">
-
-                <select name="beforeLengthConversion">
+            <form id="beforeLen" class="form-inline">
+                <label for="beforeLengthConversion">Choose Units</label>
+                <select id="beforeLengthConversion" name="beforeLengthConversion"  onchange="populate(this.id, 'afterLengthConversion')">
+                    <option value=""></option>
                     <option value="inches">Inches</option>
                     <option value="feet">Feet</option>
                     <option value="yards">Yards</option>
@@ -28,23 +50,18 @@
                     <input type="text" class="form-control" id="searchLength" name="searchLength" aria-describedby="searchLengthHelp" placeholder="Enter value of measurement.">
                 </div>
 
-                <select name="afterLengthLength">
-                    <option value="feet">Feet</option>
-                    <option value="yards">Yards</option>
-                    <option value="miles">Miles</option>
-                    <option value="mm">Millimeters</option>
-                    <option value="cm">Centimeters</option>
-                    <option value="meters">Meters</option>
-                    <option value="km">Kilometers</option>
+                <label for="afterLengthConversion">Change To New Units</label>
+                <select id="afterLengthConversion" name="afterLengthConversion">
                 </select>
 
                 <button type="submit" name="submit" value="search" class="btn btn-primary">Search</button>
             </form>
 
             <h3>Volume</h3>
-            <form action="beforeVolume" id="beforeVol" class="form-inline">
+            <form id="beforeVol" class="form-inline">
 
-                <select name="beforeVolumeConversion">
+                <label for="beforeVolumeConversion">Choose Units</label>
+                <select id="beforeVolumeConversion" name="beforeVolumeConversion" onchange="populate(this.id, 'afterVolumeConversion')">
                     <option value="ozfl">Fluid Ounces</option>
                     <option value="tsp">Teaspoons</option>
                     <option value="tbsp">Tablespoons</option>
@@ -58,7 +75,8 @@
                     <input type="text" class="form-control" id="searchVolume" name="searchVolume" aria-describedby="searchTermHelp" placeholder="Enter value of measurement.">
                 </div>
 
-                <select name="beforeVolumeConversion">
+                <label for="afterVolumeConversion">Change To New Units</label>
+                <select id="afterVolumeConversion" name="afterVolumeConversion">
                     <option value="ozfl">Fluid Ounces</option>
                     <option value="tsp">Teaspoons</option>
                     <option value="tbsp">Tablespoons</option>
@@ -71,9 +89,10 @@
             </form>
 
             <h3>Weight</h3>
-            <form action="beforeWeight" id="beforeWgt" class="form-inline">
+            <form id="beforeWgt" class="form-inline">
 
-                <select name="beforeWeightConversion">
+                <label for="beforeWeightConversion">Choose Units</label>
+                <select id="beforeWeightConversion" name="beforeWeightConversion" onchange="populate(this.id, 'afterWeightConversion')">
                     <option value="oz">Ounces</option>
                     <option value="lbs">Pounds</option>
                     <option value="grains">Grains</option>
@@ -87,7 +106,8 @@
                     <input type="text" class="form-control" id="searchWeight" name="searchWeight" aria-describedby="searchWeightHelp" placeholder="Enter value of measurement.">
                 </div>
 
-                <select name="afterWeightConversion">
+                <label for="afterWeightConversion">Change To New Units</label>
+                <select id="afterWeightConversion" name="afterWeightConversion">
                     <option value="oz">Ounces</option>
                     <option value="lbs">Pounds</option>
                     <option value="grains">Grains</option>
