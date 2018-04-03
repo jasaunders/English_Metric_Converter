@@ -53,7 +53,8 @@
 
                 <div class="form-group">
                     <label for="searchLength">Value</label>
-                    <input type="text" class="form-control" id="searchLength" name="searchLength" aria-describedby="searchLengthHelp" placeholder="Enter value of measurement.">
+                    <input type="text" class="form-control" id="searchLength" name="searchLength"
+                           aria-describedby="searchLengthHelp" placeholder="Enter value of measurement.">
                 </div>
 
                 <label for="afterLengthConversion">Change To New Units</label>
@@ -113,6 +114,8 @@
 
                 <button type="submit" name="submit" value="search" class="btn btn-primary">Search</button>
             </form>
+
+
         </div>
         <div class="col-sm-3"></div>
     </div>
