@@ -17,7 +17,7 @@ public class WeightConverter {
     @GET
     @Produces("text/plain")
     @Path("/text/{inUnit}/{outUnit}/{quantity}")
-    public Response getLengthText(
+    public Response getWeightText(
             @PathParam("inUnit") String inUnit,
             @PathParam("outUnit") String outUnit,
             @PathParam("quantity") double quantity) {
@@ -35,7 +35,7 @@ public class WeightConverter {
     @GET
     @Produces("text/html")
     @Path("/html/{inUnit}/{outUnit}/{quantity}")
-    public Response getLengthHTML(
+    public Response getWeightHTML(
             @PathParam("inUnit") String inUnit,
             @PathParam("outUnit") String outUnit,
             @PathParam("quantity") double quantity) {
@@ -60,7 +60,7 @@ public class WeightConverter {
     @GET
     @Produces("text/json")
     @Path("/json/{inUnit}/{outUnit}/{quantity}")
-    public Response getLengthJSON(
+    public Response getWeightJSON(
             @PathParam("inUnit") String inUnit,
             @PathParam("outUnit") String outUnit,
             @PathParam("quantity") double quantity) {

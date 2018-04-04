@@ -17,6 +17,7 @@ public class ConverterApplication extends Application {
         HashSet h = new HashSet<Class<?>>();
         h.add(LengthConverter.class);
         h.add(WeightConverter.class);
+        h.add(VolumeConverter.class);
         return h;
     }
 }

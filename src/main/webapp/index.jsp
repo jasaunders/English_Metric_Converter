@@ -6,14 +6,14 @@
                 var newS1 = document.getElementById(s1);
                 var newS2 = document.getElementById(s2);
                 newS2.innerHTML = "";
-                if (s2 == "afterLengthConversion")
+                if (s2 === "afterLengthConversion")
                     var optionArray = ["|", "inches|Inches", "feet|Feet", "yards|Yards", "miles|Miles",
                             "mm|Millimeters", "cm|Centimeters", "meters|Meters", "km|Kilometers"];
-                if (s2 == "afterVolumeConversion")
-                    var optionArray = ["|", "ozfl|Fluid Ounces", "tsp|Teaspoons", "tbsp|Tablespoons", "cups|Cups",
+                if (s2 === "afterVolumeConversion")
+                     optionArray = ["|", "ozfl|Fluid Ounces", "tsp|Teaspoons", "tbsp|Tablespoons", "cups|Cups",
                         "ml|Milliliters", "liters|Liters"];
-                if (s2 == "afterWeightConversion")
-                    var optionArray = ["|", "oz|Ounces", "lbs|Pounds", "grains|Grains", "tons|Short Tons",
+                if (s2 === "afterWeightConversion")
+                     optionArray = ["|", "oz|Ounces", "lbs|Pounds", "grains|Grains", "tons|Short Tons",
                         "grams|Grams", "kilos|Kilograms"];
                 for(var option in optionArray) {
                     var pair = optionArray[option].split("|");
