@@ -42,7 +42,7 @@ public class VolumeConverter {
 
         convertUnits(inUnit, outUnit, quantity);
         if (output.length() == 0) {
-            String output = "<html> <title>length converter</title> "
+            output = "<html> <title>length converter</title> "
                     + "<body><h1>"
                     + quantity
                     + " "
@@ -67,7 +67,7 @@ public class VolumeConverter {
 
         convertUnits(inUnit, outUnit, quantity);
         if (output.length() == 0) {
-            String output = "Hello  from length/json method";
+            output = "Hello  from length/json method";
         }
         return Response.status(200).entity(output).build();
 

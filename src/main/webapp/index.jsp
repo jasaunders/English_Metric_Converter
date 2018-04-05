@@ -22,7 +22,6 @@
                     newOption.innerHTML = pair[1];
                     if (newS1.value !== newOption.value)
                         newS2.options.add(newOption);
-
                 }
             }
         </script>
@@ -31,13 +30,25 @@
 
 <div>
 
+
     <div>
         <div class="col-sm-3"></div>
 
         <div class="col-sm-6" style="background-color:lavenderblush;">
             <h2>Measurement Converters</h2>
+            <form class="form-inline">
+                <div class="radio">
+                    <label><input type="radio" name="optOutput" value="text" checked>Text</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optOutput" value="html">HTML</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optOutput" value="json">JSON</label>
+                </div>
+
             <h3>Length</h3>
-            <form id="beforeLen" class="form-inline">
+
                 <label for="beforeLengthConversion">Choose Units</label>
                 <select id="beforeLengthConversion" name="beforeLengthConversion"  onchange="populate(this.id, 'afterLengthConversion')">
                     <option value=""></option>
@@ -62,10 +73,10 @@
                 </select>
 
                 <button type="submit" name="submit" value="search" class="btn btn-primary">Search</button>
-            </form>
+            <!--</form> -->
 
             <h3>Volume</h3>
-            <form id="beforeVol" class="form-inline">
+            <!-- <form id="beforeVol" class="form-inline"> -->
 
                 <label for="beforeVolumeConversion">Choose Units</label>
                 <select id="beforeVolumeConversion" name="beforeVolumeConversion" onchange="populate(this.id, 'afterVolumeConversion')">
@@ -87,10 +98,10 @@
                 <select id="afterVolumeConversion" name="afterLengthConversion">
                 </select>
                 <button type="submit" name="submit" value="search" class="btn btn-primary">Search</button>
-            </form>
+            <!--</form>-->
 
             <h3>Weight</h3>
-            <form id="beforeWgt" class="form-inline">
+            <!--<form id="beforeWgt" class="form-inline">-->
 
                 <label for="beforeWeightConversion">Choose Units</label>
                 <select id="beforeWeightConversion" name="beforeWeightConversion" onchange="populate(this.id, 'afterWeightConversion')">

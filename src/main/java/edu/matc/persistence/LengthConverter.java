@@ -4,7 +4,6 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 
@@ -44,7 +43,7 @@ public class LengthConverter {
 
         convertUnits(inUnit, outUnit, quantity);
         if (output.length() == 0) {
-            String output = "<html> <title>length converter</title> "
+             output = "<html> <title>length converter</title> "
                     + "<body><h1>"
                     + quantity
                     + " "
@@ -69,7 +68,7 @@ public class LengthConverter {
 
         convertUnits(inUnit, outUnit, quantity);
         if (output.length() == 0) {
-            String output = "Hello  from length/json method";
+            output = "Hello  from length/json method";
         }
         return Response.status(200).entity(output).build();
 
