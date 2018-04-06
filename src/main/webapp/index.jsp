@@ -36,7 +36,7 @@
 
         <div class="col-sm-6" style="background-color:lavenderblush;">
             <h2>Measurement Converters</h2>
-            <form class="form-inline">
+            <form method="GET" class="form-inline">
                 <div class="radio">
                     <label><input type="radio" name="optOutput" value="text" checked>Text</label>
                 </div>

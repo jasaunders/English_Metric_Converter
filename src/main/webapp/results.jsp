@@ -1,26 +1,21 @@
-<%@include file="taglib.jsp"%>
-<%@include file="head.jsp"%>
+import javax.ws.rs.FormParam;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.core.Response;
 
-<html><body>
+@Path("/user")
+public class UserService {
 
+@POST
+@Path("/add")
+public Response addUser(
+@FormParam("name") String name,
+@FormParam("age") int age) {
 
-<div class="container-fluid">
-    <h2>Search Results: </h2>
-    <table width="70%">
-        <thead>
-        <th>Measurement Conversion</th>
-        <th>Value in the initial system</th>
-        <th>Value after conversion</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td>${user.firstName} ${user.lastName}</td>
-                <td>${user.userName}</td>
-                <td>${user.age}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+return Response.status(200)
+.entity("addUser is called, name : " + name + ", age : " + age)
+.build();
 
-</body>
-</html>
+}
+
+}

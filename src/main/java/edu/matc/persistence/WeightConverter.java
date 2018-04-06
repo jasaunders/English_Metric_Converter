@@ -10,8 +10,6 @@ import javax.ws.rs.core.Response;
 @Path("/weight")
 public class WeightConverter {
 
-    private Double convertedQuantity = 0.0;
-    private String output = "";
 
     // The Java method will process HTTP GET requests
     @GET
@@ -22,7 +20,8 @@ public class WeightConverter {
             @PathParam("outUnit") String outUnit,
             @PathParam("quantity") double quantity) {
 
-        convertUnits(inUnit, outUnit, quantity);
+        String output = "";
+        Double convertedQuantity = convertUnits(inUnit, outUnit, quantity);
 
         if (output.length() == 0) {
             output += quantity + " " + inUnit + " =  " + convertedQuantity + " " + outUnit;
@@ -40,7 +39,9 @@ public class WeightConverter {
             @PathParam("outUnit") String outUnit,
             @PathParam("quantity") double quantity) {
 
-        convertUnits(inUnit, outUnit, quantity);
+        String output = "";
+        Double convertedQuantity = convertUnits(inUnit, outUnit, quantity);
+
         if (output.length() == 0) {
             output = "<html> <title>length converter</title> "
                     + "<body><h1>"
@@ -65,7 +66,8 @@ public class WeightConverter {
             @PathParam("outUnit") String outUnit,
             @PathParam("quantity") double quantity) {
 
-        convertUnits(inUnit, outUnit, quantity);
+        String output = "";
+        Double convertedQuantity = convertUnits(inUnit, outUnit, quantity);
         if (output.length() == 0) {
             output = "Hello  from length/json method";
         }
@@ -73,121 +75,121 @@ public class WeightConverter {
 
     }
 
-    private void convertUnits(String inUnit, String outUnit, Double quantity) {
+    private Double convertUnits(String inUnit, String outUnit, Double quantity) {
         switch (inUnit) {
-            case ("oz") : convertOunces(quantity, outUnit);
-                break;
-            case ("lbs") : convertPounds(quantity, outUnit);
-                break;
-            case ("grains") : convertGrains(quantity, outUnit);
-                break;
-            case ("tons") : convertTons(quantity, outUnit);
-                break;
-            case ("grams") : convertGrams(quantity, outUnit);
-                break;
-            case ("kilos") : convertKilos(quantity, outUnit);
-                break;
-            default : output = "error determining input units.";
+            case ("oz") : return convertOunces(quantity, outUnit);
+
+            case ("lbs") : return convertPounds(quantity, outUnit);
+
+            case ("grains") : return convertGrains(quantity, outUnit);
+
+            case ("tons") : return convertTons(quantity, outUnit);
+
+            case ("grams") : return convertGrams(quantity, outUnit);
+
+            case ("kilos") : return convertKilos(quantity, outUnit);
+
+            default : return 0.0;
         }
     }
 
-    private void convertOunces (Double quantity, String outUnit) {
+    private Double convertOunces (Double quantity, String outUnit) {
 
         switch (outUnit) {
-            case ("lbs") : convertedQuantity = (quantity / 16);
-                break;
-            case ("grains") : convertedQuantity = (quantity * 437.5);
-                break;
-            case ("tons") : convertedQuantity = (quantity / 32000);
-                break;
-            case ("grams") : convertedQuantity = (quantity * 28.3495);
-                break;
-            case ("kilos") : convertedQuantity = (quantity * 0.0283495);
-                break;
-            default : output = "error converting ounces";
+            case ("lbs") : return (quantity / 16);
+
+            case ("grains") : return (quantity * 437.5);
+
+            case ("tons") : return (quantity / 32000);
+
+            case ("grams") : return (quantity * 28.3495);
+
+            case ("kilos") : return (quantity * 0.0283495);
+
+            default : return 0.0;
         }
     }
 
-    private void convertPounds (Double quantity, String outUnit) {
+    private Double convertPounds (Double quantity, String outUnit) {
         switch (outUnit) {
-            case ("oz") : convertedQuantity = (quantity * 16);
-                break;
-            case ("grains") : convertedQuantity = (quantity * 7000);
-                break;
-            case ("tons") : convertedQuantity = (quantity / 2000);
-                break;
-            case ("grams") : convertedQuantity = (quantity * 453.592);
-                break;
-            case ("kilos") : convertedQuantity = (quantity * 0.453592);
-                break;
-            default: output = "error converting pounds";
+            case ("oz") : return (quantity * 16);
+
+            case ("grains") : return (quantity * 7000);
+
+            case ("tons") : return (quantity / 2000);
+
+            case ("grams") : return (quantity * 453.592);
+
+            case ("kilos") : return (quantity * 0.453592);
+
+            default: return 0.0;
         }
 
     }
 
-    private void convertGrains (Double quantity, String outUnit) {
+    private Double convertGrains (Double quantity, String outUnit) {
 
         switch (outUnit) {
-            case ("oz") : convertedQuantity = (quantity * 0.00228571);
-                break;
-            case ("lbs") : convertedQuantity = (quantity / 7000);
-                break;
-            case ("tons") : convertedQuantity = (quantity / 1400000);
-                break;
-            case ("grams") : convertedQuantity = (quantity * 0.0647989);
-                break;
-            case ("kilos") : convertedQuantity = (quantity * 0.0000647989);
-                break;
-            default: output = "error converting grains";
+            case ("oz") : return (quantity * 0.00228571);
+
+            case ("lbs") : return (quantity / 7000);
+
+            case ("tons") : return (quantity / 1400000);
+
+            case ("grams") : return (quantity * 0.0647989);
+
+            case ("kilos") : return (quantity * 0.0000647989);
+
+            default: return 0.0;
         }
     }
 
-    private void convertTons (Double quantity, String outUnit) {
+    private Double convertTons (Double quantity, String outUnit) {
 
         switch (outUnit) {
-            case ("oz") : convertedQuantity = (quantity * 32000);
-                break;
-            case ("lbs") : convertedQuantity = (quantity * 2000);
-                break;
-            case ("grains") : convertedQuantity = (quantity * 1400000);
-                break;
-            case ("grams") : convertedQuantity = (quantity * 907185);
-                break;
-            case ("kilos") : convertedQuantity = (quantity * 907.185);
-                break;
-            default: output = "error converting short tons";
+            case ("oz") : return (quantity * 32000);
+
+            case ("lbs") : return (quantity * 2000);
+
+            case ("grains") : return (quantity * 1400000);
+
+            case ("grams") : return (quantity * 907185);
+
+            case ("kilos") : return (quantity * 907.185);
+
+            default: return 0.0;
         }
     }
 
-    private void convertGrams (Double quantity, String outUnit) {
+    private Double convertGrams (Double quantity, String outUnit) {
         switch (outUnit) {
-            case ("oz") : convertedQuantity = (quantity / 28.3495);
-                break;
-            case ("lbs") : convertedQuantity = (quantity / 453.592);
-                break;
-            case ("grains") : convertedQuantity = (quantity * 15.4324);
-                break;
-            case ("tons") : convertedQuantity = (quantity / 907185);
-                break;
-            case ("kilos") : convertedQuantity = (quantity / 1000);
-                break;
-            default: output = "error converting grams";
+            case ("oz") : return (quantity / 28.3495);
+
+            case ("lbs") : return (quantity / 453.592);
+
+            case ("grains") : return (quantity * 15.4324);
+
+            case ("tons") : return (quantity / 907185);
+
+            case ("kilos") : return (quantity / 1000);
+
+            default: return 0.0;
         }
     }
 
-    private void convertKilos (Double quantity, String outUnit) {
+    private Double convertKilos (Double quantity, String outUnit) {
         switch (outUnit) {
-            case ("oz") : convertedQuantity = (quantity / 0.0283495);
-                break;
-            case ("lbs") : convertedQuantity = (quantity / 0.453592);
-                break;
-            case ("grains") : convertedQuantity = (quantity * 15432.4);
-                break;
-            case ("tons") : convertedQuantity = (quantity / 907.185);
-                break;
-            case ("grams") : convertedQuantity = (quantity * 1000);
-                break;
-            default: output = "error converting short tons";
+            case ("oz") : return (quantity / 0.0283495);
+
+            case ("lbs") : return (quantity / 0.453592);
+
+            case ("grains") : return (quantity * 15432.4);
+
+            case ("tons") : return (quantity / 907.185);
+
+            case ("grams") : return (quantity * 1000);
+
+            default: return 0.0;
         }
     }
 }
