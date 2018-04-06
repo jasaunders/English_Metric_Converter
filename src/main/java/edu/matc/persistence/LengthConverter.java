@@ -7,14 +7,22 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
 
+/**
+ * The type Length converter.
+ */
 @Path("/length")
 public class LengthConverter {
 
-    private Double convertedQuantity = 0.0;
-    private String output = "";
 
-
-    // The Java method will process HTTP GET requests
+    /**
+     * Gets length text.
+     *
+     * @param inUnit   the in unit
+     * @param outUnit  the out unit
+     * @param quantity the quantity
+     * @return the length text
+     */
+// The Java method will process HTTP GET requests
     @GET
     @Produces("text/plain")
     @Path("/text/{inUnit}/{outUnit}/{quantity}")
@@ -23,7 +31,10 @@ public class LengthConverter {
             @PathParam("outUnit") String outUnit,
             @PathParam("quantity") double quantity) {
 
-        convertUnits(inUnit, outUnit, quantity);
+        Double convertedQuantity = 0.0;
+        String output = "";
+
+        convertedQuantity = convertUnits(inUnit, outUnit, quantity);
 
         if (output.length() == 0) {
             output += quantity + " " + inUnit + " =  " + convertedQuantity + " " + outUnit;
@@ -33,6 +44,14 @@ public class LengthConverter {
     }
 
 
+    /**
+     * Gets length html.
+     *
+     * @param inUnit   the in unit
+     * @param outUnit  the out unit
+     * @param quantity the quantity
+     * @return the length html
+     */
     @GET
     @Produces("text/html")
     @Path("/html/{inUnit}/{outUnit}/{quantity}")
@@ -41,7 +60,10 @@ public class LengthConverter {
             @PathParam("outUnit") String outUnit,
             @PathParam("quantity") double quantity) {
 
-        convertUnits(inUnit, outUnit, quantity);
+        Double convertedQuantity = 0.0;
+        String output = "";
+
+        convertedQuantity = convertUnits(inUnit, outUnit, quantity);
         if (output.length() == 0) {
              output = "<html> <title>length converter</title> "
                     + "<body><h1>"
@@ -58,6 +80,14 @@ public class LengthConverter {
 
     }
 
+    /**
+     * Gets length json.
+     *
+     * @param inUnit   the in unit
+     * @param outUnit  the out unit
+     * @param quantity the quantity
+     * @return the length json
+     */
     @GET
     @Produces("text/json")
     @Path("/json/{inUnit}/{outUnit}/{quantity}")
@@ -66,7 +96,10 @@ public class LengthConverter {
             @PathParam("outUnit") String outUnit,
             @PathParam("quantity") double quantity) {
 
-        convertUnits(inUnit, outUnit, quantity);
+        Double convertedQuantity = 0.0;
+        String output = "";
+
+        convertedQuantity = convertUnits(inUnit, outUnit, quantity);
         if (output.length() == 0) {
             output = "Hello  from length/json method";
         }
@@ -74,249 +107,235 @@ public class LengthConverter {
 
     }
 
-    private void convertUnits(String inUnit, String outUnit, Double quantity) {
+    /**
+     * Convert units double.
+     *
+     * @param inUnit   the in unit
+     * @param outUnit  the out unit
+     * @param quantity the quantity
+     * @return the double
+     */
+    public Double convertUnits(String inUnit, String outUnit, Double quantity) {
         switch (inUnit) {
-            case ("inches") : convertInches(quantity, outUnit);
-                break;
-            case ("feet") : convertFeet(quantity, outUnit);
-                break;
-            case ("yards") : convertYards(quantity, outUnit);
-                break;
-            case ("miles") : convertMiles(quantity, outUnit);
-                break;
-            case ("mm") : convertMM(quantity, outUnit);
-                break;
-            case ("cm") : convertCM(quantity, outUnit);
-                break;
-            case ("meters") : convertMMeters(quantity, outUnit);
-                break;
-            case ("km") : convertKM(quantity, outUnit);
-                break;
-            default : output = "error determining input units.";
+            case ("inches") : return convertInches(quantity, outUnit);
+
+            case ("feet") : return convertFeet(quantity, outUnit);
+
+            case ("yards") : return convertYards(quantity, outUnit);
+
+            case ("miles") : return convertMiles(quantity, outUnit);
+
+            case ("mm") : return convertMM(quantity, outUnit);
+
+            case ("cm") : return convertCM(quantity, outUnit);
+
+            case ("meters") : return convertMeters(quantity, outUnit);
+
+            case ("km") : return convertKM(quantity, outUnit);
+
+            default : return 0.0;
         }
     }
 
-    private void convertInches (Double quantity, String outUnit) {
+    private Double convertInches (Double quantity, String outUnit) {
 
         switch (outUnit) {
 
-            case ("feet") : convertedQuantity = (quantity / 12);
-                break;
-            case ("yards") : convertedQuantity = (quantity / 36);
-                break;
-            case ("miles") : convertedQuantity = (quantity / 63360);
-                break;
-            case ("mm") : convertedQuantity = (quantity * 25.4);
-                break;
-            case ("cm") : convertedQuantity = (quantity * 2.54);
-                break;
-            case ("meters") : convertedQuantity = (quantity * .0254);
-                break;
-            case ("km") : convertedQuantity = (quantity * 2.54e-5);
-                break;
-            default : output = "error converting inches";
-        }
+            case ("feet") : return (quantity / 12);
 
-    }
+            case ("yards") : return (quantity / 36);
 
-    private void convertFeet (Double quantity, String outUnit) {
-        switch (outUnit) {
-            case ("inches"):
-                convertedQuantity = quantity * 12.00;
-                break;
-            case ("yards"):
-                convertedQuantity = quantity / 3.00;
-                break;
-            case ("miles"):
-                convertedQuantity = quantity * 0.000189394;
-                break;
-            case ("mm"):
-                convertedQuantity = quantity * 304.80;
-                break;
-            case ("cm"):
-                convertedQuantity = quantity * 30.48;
-                break;
-            case ("meters"):
-                convertedQuantity = quantity * 0.3048;
-                break;
-            case ("km"):
-                convertedQuantity = quantity * 0.0003048;
-                break;
-            default: output = "error converting feet";
+            case ("miles") : return (quantity / 63360);
+
+            case ("mm") : return (quantity * 25.4);
+
+            case ("cm") : return (quantity * 2.54);
+
+            case ("meters") : return (quantity * .0254);
+
+            case ("km") : return (quantity * 2.54e-5);
+
+            default : return 0.0;
         }
 
     }
 
-    private void convertYards (Double quantity, String outUnit) {
+    private Double convertFeet (Double quantity, String outUnit) {
+        switch (outUnit) {
+            case ("inches"): return (quantity * 12.00);
+
+            case ("yards"): return (quantity / 3.00);
+
+            case ("miles"): return (quantity * 0.000189394);
+
+            case ("mm"): return (quantity * 304.80);
+
+            case ("cm"): return (quantity * 30.48);
+
+            case ("meters"): return (quantity * 0.3048);
+
+            case ("km"): return (quantity * 0.0003048);
+
+            default: return 0.0;
+        }
+
+    }
+
+    private Double convertYards (Double quantity, String outUnit) {
 
         switch (outUnit) {
-            case ("inches"):
-                convertedQuantity = quantity * 36.00;
-                break;
+            case ("inches"): return (quantity * 36.00);
+            case ("feet"): return (quantity * 3);
+
+            case ("miles"): return (quantity * 0.00056818);
+
+            case ("mm"): return (quantity * 914.4);
+
+            case ("cm"): return (quantity * 91.44);
+
+            case ("meters"): return (quantity * 0.9144);
+
+            case ("km"): return (quantity * 0.0009144);
+
+            default: return 0.0;
+        }
+    }
+    private Double convertMiles (Double quantity, String outUnit) {
+
+        switch (outUnit) {
+            case ("inches"): return (quantity * 63360);
+
             case ("feet"):
-                convertedQuantity = quantity * 3;
-                break;
-            case ("miles"):
-                convertedQuantity = quantity * 0.00056818;
-                break;
-            case ("mm"):
-                convertedQuantity = quantity * 914.4;
-                break;
-            case ("cm"):
-                convertedQuantity = quantity * 91.44;
-                break;
-            case ("meters"):
-                convertedQuantity = quantity * 0.9144;
-                break;
-            case ("km"):
-                convertedQuantity = quantity * 0.0009144;
-                break;
-            default:
-                output = "error converting yards";
-        }
-    }
-    private void convertMiles (Double quantity, String outUnit) {
+                return (quantity * 5280);
 
-        switch (outUnit) {
-            case ("inches"):
-                convertedQuantity = quantity * 63360;
-                break;
-            case ("feet"):
-                convertedQuantity = quantity * 5280;
-                break;
             case ("yards"):
-                convertedQuantity = quantity * 1760;
-                break;
+                return (quantity * 1760);
+
             case ("mm"):
-                convertedQuantity = quantity * 1.609e+6;
-                break;
+                return (quantity * 1.609e+6);
+
             case ("cm"):
-                convertedQuantity = quantity * 160934;
-                break;
+                return (quantity * 160934);
+
             case ("meters"):
-                convertedQuantity = quantity * 1609.34;
-                break;
+                return (quantity * 1609.34);
+
             case ("km"):
-                convertedQuantity = quantity * 1.60934;
-                break;
-            default:
-                output = "error converting miles";
+                return (quantity * 1.60934);
+
+            default: return 0.0;
         }
     }
 
-    private void convertMM (Double quantity, String outUnit) {
+    private Double convertMM (Double quantity, String outUnit) {
 
         switch (outUnit) {
             case ("inches"):
-                convertedQuantity = quantity * 0.0393701;
-                break;
+                return (quantity * 0.0393701);
+
             case ("feet"):
-                convertedQuantity = quantity * 0.00328084;
-                break;
+                return (quantity * 0.00328084);
+
             case ("yards"):
-                convertedQuantity = quantity * 0.00109361;
-                break;
+                return (quantity * 0.00109361);
+
             case ("miles"):
-                convertedQuantity = quantity * 6.2137e-7;
-                break;
+                return (quantity * 6.2137e-7);
+
             case ("cm"):
-                convertedQuantity = quantity * 0.1;
-                break;
+                return (quantity * 0.1);
+
             case ("meters"):
-                convertedQuantity = quantity * 0.001;
-                break;
+                return (quantity * 0.001);
+
             case ("km"):
-                convertedQuantity = quantity * 1e-6;
-                break;
-            default:
-                output = "error converting mm";
+                return (quantity * 1e-6);
+
+            default: return 0.0;
         }
     }
 
-    private void convertKM (Double quantity, String outUnit) {
+    private Double convertKM (Double quantity, String outUnit) {
 
         switch (outUnit) {
             case ("inches"):
-                convertedQuantity = quantity * 39370.1;
-                break;
+                return (quantity * 39370.1);
+
             case ("feet"):
-                convertedQuantity = quantity * 3280.84;
-                break;
+                return (quantity * 3280.84);
+
             case ("yards"):
-                convertedQuantity = quantity * 1093.61;
-                break;
+                return (quantity * 1093.61);
+
             case ("miles"):
-                convertedQuantity = quantity * 0.621371;
-                break;
+                return (quantity * 0.621371);
+
             case ("cm"):
-                convertedQuantity = quantity * 100000;
-                break;
+                return (quantity * 100000);
+
             case ("meters"):
-                convertedQuantity = quantity * 1000;
-                break;
+                return (quantity * 1000);
+
             case ("mm"):
-                convertedQuantity = quantity * 1e+6;
-                break;
-            default:
-                output = "error converting km";
+                return (quantity * 1e+6);
+
+            default: return 0.0;
         }
     }
 
-    private void convertCM (Double quantity, String outUnit) {
+    private Double convertCM (Double quantity, String outUnit) {
 
         switch (outUnit) {
             case ("inches"):
-                convertedQuantity = quantity * 0.393701;
-                break;
+                return (quantity * 0.393701);
+
             case ("feet"):
-                convertedQuantity = quantity * 0.0328084;
-                break;
+                return (quantity * 0.0328084);
+
             case ("yards"):
-                convertedQuantity = quantity * 0.0109361;
-                break;
+                return (quantity * 0.0109361);
+
             case ("miles"):
-                convertedQuantity = quantity * 6.2137e-6;
-                break;
+                return (quantity * 6.2137e-6);
+
             case ("km"):
-                convertedQuantity = quantity * 1e-5;
-                break;
+                return (quantity * 1e-5);
+
             case ("meters"):
-                convertedQuantity = quantity * 0.01;
-                break;
+                return (quantity * 0.01);
+
             case ("mm"):
-                convertedQuantity = quantity * 10;
-                break;
-            default:
-                output = "error converting cm";
+                return (quantity * 10);
+
+            default: return 0.0;
         }
     }
 
-    private void convertMMeters (Double quantity, String outUnit) {
+    private Double convertMeters (Double quantity, String outUnit) {
 
         switch (outUnit) {
             case ("inches"):
-                convertedQuantity = quantity * 39.3701;
-                break;
+                return (quantity * 39.3701);
+
             case ("feet"):
-                convertedQuantity = quantity * 3.28084;
-                break;
+                return (quantity * 3.28084);
+
             case ("yards"):
-                convertedQuantity = quantity * 1.09361;
-                break;
+                return (quantity * 1.09361);
+
             case ("miles"):
-                convertedQuantity = quantity * 0.000621371;
-                break;
+                return (quantity * 0.000621371);
+
             case ("km"):
-                convertedQuantity = quantity * 0.001;
-                break;
+                return (quantity * 0.001);
+
             case ("cm"):
-                convertedQuantity = quantity * 100;
-                break;
+                return (quantity * 100);
+
             case ("mm"):
-                convertedQuantity = quantity * 1000;
-                break;
-            default:
-                output = "error converting meters";
+                return (quantity * 1000);
+
+            default: return 0.0;
         }
     }
 

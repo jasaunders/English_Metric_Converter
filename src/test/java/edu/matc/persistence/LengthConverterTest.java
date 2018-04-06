@@ -12,15 +12,74 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class LengthConverterTest {
 
-    @Ignore
     @Test
-    void getLengthText() throws Exception{
+    void convertInchesToFeetSuccess() throws Exception{
 
- //       Client client = ClientBuilder.newClient();
-    //    WebTarget target =
-     //           client.target("xxx");
-    //    String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
-    //    assertEquals("???", response);
+        Double result = 0.0;
+        LengthConverter converter = new LengthConverter();
+        result = converter.convertUnits("inches", "feet", 36.0) ;
+
+        assertEquals((Double)3.0, result);
+    }
+
+    @Test
+    void convertInchesToYardsSuccess() throws Exception{
+
+        Double result = 0.0;
+        LengthConverter converter = new LengthConverter();
+        result = converter.convertUnits("inches", "yards", 36.0) ;
+
+        assertEquals((Double)1.0, result);
+    }
+
+    @Test
+    void convertInchesToMileSuccess() throws Exception{
+
+        Double result = 0.0;
+        LengthConverter converter = new LengthConverter();
+        result = converter.convertUnits("inches", "miles", 63360.0) ;
+
+        assertEquals((Double)1.0, result);
+    }
+
+    @Test
+    void convertInchesToMilimetersSuccess() throws Exception{
+
+        Double result = 0.0;
+        LengthConverter converter = new LengthConverter();
+        result = converter.convertUnits("inches", "mm", 1.0) ;
+
+        assertEquals((Double)25.4, result);
+    }
+
+    @Test
+    void convertInchesToCentimetersSuccess() throws Exception{
+
+        Double result = 0.0;
+        LengthConverter converter = new LengthConverter();
+        result = converter.convertUnits("inches", "cm", 1.0) ;
+
+        assertEquals((Double)2.54, result);
+    }
+
+    @Test
+    void convertInchesToMetersSuccess() throws Exception{
+
+        Double result = 0.0;
+        LengthConverter converter = new LengthConverter();
+        result = converter.convertUnits("inches", "meters", 36.0) ;
+
+        assertEquals((Double)0.9144, result);
+    }
+
+    @Test
+    void convertInchesToKilometersSuccess() throws Exception{
+
+        Double result = 0.0;
+        LengthConverter converter = new LengthConverter();
+        result = converter.convertUnits("inches", "km", 10000.0) ;
+
+        assertEquals((Double)0.254, result);
     }
 
     @Test
