@@ -8,11 +8,15 @@
 ### Week 11
 - [X] Create Stub for Classes
 - [X] Code logic for front end
-- [ ] Code logic for back end
+- [X] Code logic for back end
+- [X] Refactor converters for the 4th time.
 - [ ] Unit testing
-- [ ] Code script or servlet to access api and return data
-### Week 12
+- [ ] User Documentation- use index page and form to demo API
+- [ ] Modify Form Submit buttons to call API
+- [ ] Add API introductory paragraph
+- [ ] Add links below the form for the various API methods.
 - [ ] Java Documentation
-- [ ] User Documentation
-- [ ] Upload to AWS
+- [ ] Deploy to AWS (Dennis)
+### Week 12
+- [ ] Practise Demo SOAP UI 
 - [ ] Presentation
