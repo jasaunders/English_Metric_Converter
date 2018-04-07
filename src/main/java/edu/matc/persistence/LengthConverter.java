@@ -31,10 +31,8 @@ public class LengthConverter {
             @PathParam("outUnit") String outUnit,
             @PathParam("quantity") double quantity) {
 
-        Double convertedQuantity = 0.0;
         String output = "";
-
-        convertedQuantity = convertUnits(inUnit, outUnit, quantity);
+        Double convertedQuantity = convertUnits(inUnit, outUnit, quantity);
 
         if (output.length() == 0) {
             output += quantity + " " + inUnit + " =  " + convertedQuantity + " " + outUnit;
@@ -60,10 +58,9 @@ public class LengthConverter {
             @PathParam("outUnit") String outUnit,
             @PathParam("quantity") double quantity) {
 
-        Double convertedQuantity = 0.0;
         String output = "";
+        Double convertedQuantity = convertUnits(inUnit, outUnit, quantity);
 
-        convertedQuantity = convertUnits(inUnit, outUnit, quantity);
         if (output.length() == 0) {
              output = "<html> <title>length converter</title> "
                     + "<body><h1>"
@@ -96,12 +93,13 @@ public class LengthConverter {
             @PathParam("outUnit") String outUnit,
             @PathParam("quantity") double quantity) {
 
-        Double convertedQuantity = 0.0;
-        String output = "";
 
-        convertedQuantity = convertUnits(inUnit, outUnit, quantity);
+        String output = "";
+        Double convertedQuantity = convertUnits(inUnit, outUnit, quantity);
+
         if (output.length() == 0) {
-            output = "Hello  from length/json method";
+            output = "{\n    " + inUnit + " : " + quantity + ",\n    "
+                    + outUnit + " : " + convertedQuantity + "\n" + "}";
         }
         return Response.status(200).entity(output).build();
 

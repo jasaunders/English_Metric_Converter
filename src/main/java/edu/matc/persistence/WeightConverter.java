@@ -69,7 +69,8 @@ public class WeightConverter {
         String output = "";
         Double convertedQuantity = convertUnits(inUnit, outUnit, quantity);
         if (output.length() == 0) {
-            output = "Hello  from length/json method";
+            output = "{\n    " + inUnit + " : " + quantity + ",\n    "
+                    + outUnit + " : " + convertedQuantity + "\n" + "}";
         }
         return Response.status(200).entity(output).build();
 
