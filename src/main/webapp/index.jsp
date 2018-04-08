@@ -5,9 +5,6 @@
 
         <script type="text/javascript">
 
-            $(document).ready(function() {
-
-
                 function populate(s1, s2) {
                     var newS1 = document.getElementById(s1);
                     var newS2 = document.getElementById(s2);
@@ -34,28 +31,28 @@
                 }
 
 
-                $("#submitLength").attr("onclick","submitLength");
-                $("#submitVolume").attr("onclick","submitVolume");
+                $(document).ready(function() {
+
+                $('#submitLength').click(function(){
+
+                    var inUnit = $("#beforeLengthConversion").selected.valueOf();
+
+                    console.log("input unit is " + inUnit);
+                    //ouput unit
+                    var outUnit = $("#afterLengthConversion").selected.ValueOf();
+                    //number of units
+                    var inQuantity = 0.0;
+
+                    $('#getForm').attr('action', 'services/' + inUnit + '/' + outUnit + '/' + inQuantity);
+                    console.log("url is " + $('#getForm').action.valueOf());
+                });
+
+
+
+            /*    $("#submitVolume").attr("onclick","submitVolume");
                 $("#submitWeight").attr("onclick","submitWeight");
 
-                function OnSubmitForm()
-                {
-                    if(document.pressed == 'submitLength')
-                    {
-                        submitLength();
-                    }
-                    if(document.pressed == 'submitVolume')
-                    {
-                        submitVolume();
-                    }
-                    else {
-                        if(document.pressed == 'submitWeight')
-                        {
-                            submitWeight();
-                        }
-                    }
-                    return true;
-                }
+
 
                 function submitLength() {
                     //input unit
@@ -68,7 +65,7 @@
                     //number of units
                     var inQuantity = 0.0;
 
-                    $("#getForm").attr('action', '/services/' + inUnit + '/' + outUnit + '/' + inQuantity);
+                    $("#getForm").attr('action', '/services/' + inUnit + '/' + outUnit + '/' + inQuantity).submit();
                 }
 
                 function submitVolume() {
@@ -79,7 +76,7 @@
                 function submitWeight() {
 
 
-                }
+                } */
 
             })
 
