@@ -114,7 +114,7 @@ public class WeightConverter {
      * @param quantity the quantity using the entered system of weight
      * @return         the equivalent quantity in the output units of weight
      */
-    private Double convertUnits(String inUnit, String outUnit, Double quantity) {
+    public Double convertUnits(String inUnit, String outUnit, Double quantity) {
         switch (inUnit) {
             case ("oz") : return convertOunces(quantity, outUnit);
 

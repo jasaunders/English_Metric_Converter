@@ -115,7 +115,7 @@ public class VolumeConverter {
      * @param quantity the quantity using the entered system of volume
      * @return         the equivalent quantity in the output units of volume
      */
-    private Double convertUnits(String inUnit, String outUnit, Double quantity) {
+    public Double convertUnits(String inUnit, String outUnit, Double quantity) {
         switch (inUnit) {
             case ("ozfl") : return convertFluidOunces(quantity, outUnit);
 
