@@ -7,11 +7,22 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
 
+/**
+ * The type Volume converter.
+ */
 @Path("/volume")
 public class VolumeConverter {
 
 
-    // The Java method will process HTTP GET requests
+    /**
+     * Gets volume in text format.
+     *
+     * @param inUnit   the entered system of volume
+     * @param outUnit  the output system of volume
+     * @param quantity the quantity using the entered system of volume
+     * @return         the equivalent quantity in the output units of volume in text format
+     */
+// The Java method will process HTTP GET requests
     @GET
     @Produces("text/plain")
     @Path("/text/{inUnit}/{outUnit}/{quantity}")
@@ -32,6 +43,14 @@ public class VolumeConverter {
     }
 
 
+    /**
+     * Gets volume in HTML format.
+     *
+     * @param inUnit   the entered system of volume
+     * @param outUnit  the output system of volume
+     * @param quantity the quantity using the entered system of volume
+     * @return         the equivalent quantity in the output units of volume in HTML format
+     */
     @GET
     @Produces("text/html")
     @Path("/html/{inUnit}/{outUnit}/{quantity}")
@@ -61,6 +80,14 @@ public class VolumeConverter {
 
     }
 
+    /**
+     * Gets volume in JSON format.
+     *
+     * @param inUnit   the entered system of volume
+     * @param outUnit  the output system of volume
+     * @param quantity the quantity using the entered system of volume
+     * @return         the equivalent quantity in the output units of volume in JSON format
+     */
     @GET
     @Produces("text/json")
     @Path("/json/{inUnit}/{outUnit}/{quantity}")
@@ -80,6 +107,14 @@ public class VolumeConverter {
 
     }
 
+    /**
+     * Convert entered units of one system of volume into equivalent units of another system of volume.
+     *
+     * @param inUnit   the entered system of volume
+     * @param outUnit  the output system of volume
+     * @param quantity the quantity using the entered system of volume
+     * @return         the equivalent quantity in the output units of volume
+     */
     private Double convertUnits(String inUnit, String outUnit, Double quantity) {
         switch (inUnit) {
             case ("ozfl") : return convertFluidOunces(quantity, outUnit);
@@ -98,6 +133,13 @@ public class VolumeConverter {
         }
     }
 
+    /**
+     * Convert entered number of fluid ounces into equivalent units of another system of volume.
+     *
+     * @param quantity the quantity in fluid ounces
+     * @param outUnit  the output system of fluid ounces
+     * @return         the equivalent quantity in the output units of volume
+     */
     private Double convertFluidOunces (Double quantity, String outUnit) {
 
         switch (outUnit) {
@@ -115,6 +157,13 @@ public class VolumeConverter {
         }
     }
 
+    /**
+     * Convert entered number of teaspoons into equivalent units of another system of volume.
+     *
+     * @param quantity the quantity in teaspoons
+     * @param outUnit  the output system of teaspoons
+     * @return         the equivalent quantity in the output units of volume
+     */
     private Double convertTeaspoons (Double quantity, String outUnit) {
         switch (outUnit) {
             case ("ozfl") : return (quantity / 6);
@@ -132,6 +181,13 @@ public class VolumeConverter {
 
     }
 
+    /**
+     * Convert entered number of tablespoons into equivalent units of another system of volume.
+     *
+     * @param quantity the quantity in tablespoons
+     * @param outUnit  the output system of tablespoons
+     * @return         the equivalent quantity in the output units of volume
+     */
     private Double convertTablespoons(Double quantity, String outUnit) {
 
         switch (outUnit) {
@@ -149,6 +205,13 @@ public class VolumeConverter {
         }
     }
 
+    /**
+     * Convert entered number of cups into equivalent units of another system of volume.
+     *
+     * @param quantity the quantity in cups
+     * @param outUnit  the output system of cups
+     * @return         the equivalent quantity in the output units of volume
+     */
     private Double convertCups (Double quantity, String outUnit) {
 
         switch (outUnit) {
@@ -167,6 +230,13 @@ public class VolumeConverter {
 
     }
 
+    /**
+     * Convert entered number of milliliters into equivalent units of another system of volume.
+     *
+     * @param quantity the quantity in milliliters
+     * @param outUnit  the output system of milliliters
+     * @return         the equivalent quantity in the output units of volume
+     */
     private Double convertMilliliters (Double quantity, String outUnit) {
         switch (outUnit) {
             case ("ozfl") : return (quantity * 0.033814);
@@ -184,6 +254,13 @@ public class VolumeConverter {
 
     }
 
+    /**
+     * Convert entered number of liters into equivalent units of another system of volume.
+     *
+     * @param quantity the quantity in liters
+     * @param outUnit  the output system of liters
+     * @return         the equivalent quantity in the output units of volume
+     */
     private Double convertLiters (Double quantity, String outUnit) {
         switch (outUnit) {
             case ("ozfl") : return (quantity * 33.814);

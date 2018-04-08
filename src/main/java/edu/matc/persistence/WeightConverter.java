@@ -7,11 +7,23 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
 
+/**
+ * The type Weight converter.
+ */
 @Path("/weight")
 public class WeightConverter {
 
 
-    // The Java method will process HTTP GET requests
+    /**
+     * Gets weight in text format.
+     *
+     * @param inUnit   the entered system of weight
+     * @param outUnit  the output system of weight
+     * @param quantity the quantity using the entered system of weight
+     * @return         the equivalent quantity in the output units of weight in text format
+     *
+     */
+// The Java method will process HTTP GET requests
     @GET
     @Produces("text/plain")
     @Path("/text/{inUnit}/{outUnit}/{quantity}")
@@ -30,6 +42,16 @@ public class WeightConverter {
         return Response.status(200).entity(output).build();
     }
 
+
+    /**
+     * Gets weight in HTML format.
+     *
+     * @param inUnit   the entered system of weight
+     * @param outUnit  the output system of weight
+     * @param quantity the quantity using the entered system of weight
+     * @return         the equivalent quantity in the output units of weight in HTML format
+     *
+     */
 
     @GET
     @Produces("text/html")
@@ -58,6 +80,14 @@ public class WeightConverter {
 
     }
 
+    /**
+     * Gets weight in JSON format.
+     *
+     * @param inUnit   the entered system of weight
+     * @param outUnit  the output system of weight
+     * @param quantity the quantity using the entered system of weight
+     * @return         the equivalent quantity in the output units of weight in JSON format
+     */
     @GET
     @Produces("text/json")
     @Path("/json/{inUnit}/{outUnit}/{quantity}")
@@ -76,6 +106,14 @@ public class WeightConverter {
 
     }
 
+    /**
+     * Convert entered units of one system of weight into equivalent units of another system of weight.
+     *
+     * @param inUnit   the entered system of weight
+     * @param outUnit  the output system of weight
+     * @param quantity the quantity using the entered system of weight
+     * @return         the equivalent quantity in the output units of weight
+     */
     private Double convertUnits(String inUnit, String outUnit, Double quantity) {
         switch (inUnit) {
             case ("oz") : return convertOunces(quantity, outUnit);
@@ -94,6 +132,13 @@ public class WeightConverter {
         }
     }
 
+    /**
+     * Convert entered number of ounces into equivalent units of another system of weight.
+     *
+     * @param quantity the quantity in ounces
+     * @param outUnit  the output system of ounces
+     * @return         the equivalent quantity in the output units of weight
+     */
     private Double convertOunces (Double quantity, String outUnit) {
 
         switch (outUnit) {
@@ -111,6 +156,13 @@ public class WeightConverter {
         }
     }
 
+    /**
+     * Convert entered number of pounds into equivalent units of another system of weight.
+     *
+     * @param quantity the quantity in pounds
+     * @param outUnit  the output system of pounds
+     * @return         the equivalent quantity in the output units of weight
+     */
     private Double convertPounds (Double quantity, String outUnit) {
         switch (outUnit) {
             case ("oz") : return (quantity * 16);
@@ -128,6 +180,13 @@ public class WeightConverter {
 
     }
 
+    /**
+     * Convert entered number of grains into equivalent units of another system of weight.
+     *
+     * @param quantity the quantity in grains
+     * @param outUnit  the output system of grains
+     * @return         the equivalent quantity in the output units of weight
+     */
     private Double convertGrains (Double quantity, String outUnit) {
 
         switch (outUnit) {
@@ -145,6 +204,13 @@ public class WeightConverter {
         }
     }
 
+    /**
+     * Convert entered number of tons into equivalent units of another system of weight.
+     *
+     * @param quantity the quantity in tons
+     * @param outUnit  the output system of tons
+     * @return         the equivalent quantity in the output units of weight
+     */
     private Double convertTons (Double quantity, String outUnit) {
 
         switch (outUnit) {
@@ -162,6 +228,13 @@ public class WeightConverter {
         }
     }
 
+    /**
+     * Convert entered number of grams into equivalent units of another system of weight.
+     *
+     * @param quantity the quantity in grams
+     * @param outUnit  the output system of grams
+     * @return         the equivalent quantity in the output units of weight
+     */
     private Double convertGrams (Double quantity, String outUnit) {
         switch (outUnit) {
             case ("oz") : return (quantity / 28.3495);
@@ -178,6 +251,13 @@ public class WeightConverter {
         }
     }
 
+    /**
+     * Convert entered number of kilograms into equivalent units of another system of weight.
+     *
+     * @param quantity the quantity in kilograms
+     * @param outUnit  the output system of kilograms
+     * @return         the equivalent quantity in the output units of weight
+     */
     private Double convertKilos (Double quantity, String outUnit) {
         switch (outUnit) {
             case ("oz") : return (quantity / 0.0283495);
