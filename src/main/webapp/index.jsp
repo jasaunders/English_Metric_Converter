@@ -125,8 +125,10 @@
 
                 <button type="submit" name="submit" value="search" class="btn btn-primary">Search</button>
 
-                <label for="converterResult">Conversion Result</label>
-                <text id="converterResult" name="converterResult"></text>
+                <div class="form-group">
+                    <label for="converterResult">Conversion Result</label>
+                    <input type="text" id="converterResult" name="converterResult"></input>
+                </div>
             </form>
 
 
