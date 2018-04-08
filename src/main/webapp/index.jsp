@@ -36,7 +36,7 @@
 
         <div class="col-sm-6" style="background-color:lavenderblush;">
             <h2>Measurement Converters</h2>
-            <form method="GET" class="form-inline">
+            <form action="converter/services/" method="GET" class="form-inline">
                 <div class="radio">
                     <label><input type="radio" name="optOutput" value="text" checked>Text</label>
                 </div>
@@ -124,6 +124,9 @@
                 </select>
 
                 <button type="submit" name="submit" value="search" class="btn btn-primary">Search</button>
+
+                <label for="converterResult">Conversion Result</label>
+                <text id="converterResult" name="converterResult"></text>
             </form>
 
 
