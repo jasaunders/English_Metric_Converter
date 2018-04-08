@@ -125,6 +125,7 @@
 
                 <button type="submit" name="submit" value="search" class="btn btn-primary">Search</button>
 
+                <h3>Results</h3>
                 <div class="form-group">
                     <label for="converterResult">Conversion Result</label>
                     <input type="text" id="converterResult" name="converterResult"></input>
