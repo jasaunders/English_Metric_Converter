@@ -15,12 +15,12 @@ public class LengthConverter {
 
 
     /**
-     * Gets length text.
+     * Gets length in text format.
      *
-     * @param inUnit   the in unit
-     * @param outUnit  the out unit
-     * @param quantity the quantity
-     * @return the length text
+     * @param inUnit   the entered system of length
+     * @param outUnit  the output system of length
+     * @param quantity the quantity using the entered system of length
+     * @return         the equivalent quantity in the output units of length in text format
      */
 // The Java method will process HTTP GET requests
     @GET
@@ -43,12 +43,12 @@ public class LengthConverter {
 
 
     /**
-     * Gets length html.
+     * Gets length in HTML format.
      *
-     * @param inUnit   the in unit
-     * @param outUnit  the out unit
-     * @param quantity the quantity
-     * @return the length html
+     * @param inUnit   the entered system of length
+     * @param outUnit  the output system of length
+     * @param quantity the quantity using the entered system of length
+     * @return         the equivalent quantity in the output units of length in HTML format
      */
     @GET
     @Produces("text/html")
@@ -78,12 +78,12 @@ public class LengthConverter {
     }
 
     /**
-     * Gets length json.
+     * Gets length in JSON format.
      *
-     * @param inUnit   the in unit
-     * @param outUnit  the out unit
-     * @param quantity the quantity
-     * @return the length json
+     * @param inUnit   the entered system of length
+     * @param outUnit  the output system of length
+     * @param quantity the quantity using the entered system of length
+     * @return         the equivalent quantity in the output units of length in JSON format
      */
     @GET
     @Produces("text/json")
@@ -106,12 +106,12 @@ public class LengthConverter {
     }
 
     /**
-     * Convert units double.
+     * Convert entered units of one system of length into equivalent units of another system of length.
      *
-     * @param inUnit   the in unit
-     * @param outUnit  the out unit
-     * @param quantity the quantity
-     * @return the double
+     * @param inUnit   the entered system of length
+     * @param outUnit  the output system of length
+     * @param quantity the quantity using the entered system of length
+     * @return         the equivalent quantity in the output units of length
      */
     public Double convertUnits(String inUnit, String outUnit, Double quantity) {
         switch (inUnit) {
@@ -135,6 +135,13 @@ public class LengthConverter {
         }
     }
 
+    /**
+     * Convert entered number of inches into equivalent units of another system of length.
+     *
+     * @param quantity the quantity in inches
+     * @param outUnit  the output system of length
+     * @return         the equivalent quantity in the output units of length
+     */
     private Double convertInches (Double quantity, String outUnit) {
 
         switch (outUnit) {
@@ -158,6 +165,13 @@ public class LengthConverter {
 
     }
 
+    /**
+     * Convert entered number of feet into equivalent units of another system of length.
+     *
+     * @param quantity the quantity in feet
+     * @param outUnit  the output system of length
+     * @return         the equivalent quantity in the output units of length
+     */
     private Double convertFeet (Double quantity, String outUnit) {
         switch (outUnit) {
             case ("inches"): return (quantity * 12.00);
@@ -179,6 +193,13 @@ public class LengthConverter {
 
     }
 
+    /**
+     * Convert entered number of yards into equivalent units of another system of length.
+     *
+     * @param quantity the quantity in yards
+     * @param outUnit  the output system of length
+     * @return         the equivalent quantity in the output units of length
+     */
     private Double convertYards (Double quantity, String outUnit) {
 
         switch (outUnit) {
@@ -198,6 +219,14 @@ public class LengthConverter {
             default: return 0.0;
         }
     }
+
+    /**
+     * Convert entered number of miles into equivalent units of another system of length.
+     *
+     * @param quantity the quantity in miles
+     * @param outUnit  the output system of length
+     * @return         the equivalent quantity in the output units of length
+     */
     private Double convertMiles (Double quantity, String outUnit) {
 
         switch (outUnit) {
@@ -225,6 +254,13 @@ public class LengthConverter {
         }
     }
 
+    /**
+     * Convert entered number of millimeters into equivalent units of another system of length.
+     *
+     * @param quantity the quantity in millimeters
+     * @param outUnit  the output system of length
+     * @return         the equivalent quantity in the output units of length
+     */
     private Double convertMM (Double quantity, String outUnit) {
 
         switch (outUnit) {
@@ -253,6 +289,13 @@ public class LengthConverter {
         }
     }
 
+    /**
+     * Convert entered number of kilometers into equivalent units of another system of length.
+     *
+     * @param quantity the quantity in kilometers
+     * @param outUnit  the output system of length
+     * @return         the equivalent quantity in the output units of length
+     */
     private Double convertKM (Double quantity, String outUnit) {
 
         switch (outUnit) {
@@ -281,6 +324,13 @@ public class LengthConverter {
         }
     }
 
+    /**
+     * Convert entered number of centimeters into equivalent units of another system of length.
+     *
+     * @param quantity the quantity in centimeters
+     * @param outUnit  the output system of length
+     * @return         the equivalent quantity in the output units of length
+     */
     private Double convertCM (Double quantity, String outUnit) {
 
         switch (outUnit) {
@@ -309,6 +359,13 @@ public class LengthConverter {
         }
     }
 
+    /**
+     * Convert entered number of meters into equivalent units of another system of length.
+     *
+     * @param quantity the quantity in meters
+     * @param outUnit  the output system of length
+     * @return         the equivalent quantity in the output units of length
+     */
     private Double convertMeters (Double quantity, String outUnit) {
 
         switch (outUnit) {
