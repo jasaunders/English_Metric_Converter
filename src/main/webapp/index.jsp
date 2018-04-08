@@ -1,29 +1,88 @@
 <%@include file="head.jsp"%>
 <html>
     <head>
+
+
         <script type="text/javascript">
-            function populate(s1, s2) {
-                var newS1 = document.getElementById(s1);
-                var newS2 = document.getElementById(s2);
-                newS2.innerHTML = "";
-                if (s2 === "afterLengthConversion")
-                    var optionArray = ["|", "inches|Inches", "feet|Feet", "yards|Yards", "miles|Miles",
-                            "mm|Millimeters", "cm|Centimeters", "meters|Meters", "km|Kilometers"];
-                if (s2 === "afterVolumeConversion")
-                     optionArray = ["|", "ozfl|Fluid Ounces", "tsp|Teaspoons", "tbsp|Tablespoons", "cups|Cups",
-                        "ml|Milliliters", "liters|Liters"];
-                if (s2 === "afterWeightConversion")
-                     optionArray = ["|", "oz|Ounces", "lbs|Pounds", "grains|Grains", "tons|Short Tons",
-                        "grams|Grams", "kilos|Kilograms"];
-                for(var option in optionArray) {
-                    var pair = optionArray[option].split("|");
-                    var newOption = document.createElement("option");
-                    newOption.value = pair[0];
-                    newOption.innerHTML = pair[1];
-                    if (newS1.value !== newOption.value)
-                        newS2.options.add(newOption);
+
+            $(document).ready(function() {
+
+
+                function populate(s1, s2) {
+                    var newS1 = document.getElementById(s1);
+                    var newS2 = document.getElementById(s2);
+                    newS2.innerHTML = "";
+                    if (s2 === "afterLengthConversion")
+                        var optionArray = ["|", "inches|Inches", "feet|Feet", "yards|Yards", "miles|Miles",
+                                "mm|Millimeters", "cm|Centimeters", "meters|Meters", "km|Kilometers"];
+                    if (s2 === "afterVolumeConversion")
+                         optionArray = ["|", "ozfl|Fluid Ounces", "tsp|Teaspoons", "tbsp|Tablespoons", "cups|Cups",
+                            "ml|Milliliters", "liters|Liters"];
+                    if (s2 === "afterWeightConversion")
+                         optionArray = ["|", "oz|Ounces", "lbs|Pounds", "grains|Grains", "tons|Short Tons",
+                            "grams|Grams", "kilos|Kilograms"];
+                    for(var option in optionArray) {
+                        var pair = optionArray[option].split("|");
+                        var newOption = document.createElement("option");
+                        newOption.value = pair[0];
+                        newOption.innerHTML = pair[1];
+                        if (newS1.value !== newOption.value)
+                            newS2.options.add(newOption);
+                    }
+
+
                 }
-            }
+
+
+                $("#submitLength").attr("onclick","submitLength");
+                $("#submitVolume").attr("onclick","submitVolume");
+                $("#submitWeight").attr("onclick","submitWeight");
+
+                function OnSubmitForm()
+                {
+                    if(document.pressed == 'submitLength')
+                    {
+                        submitLength();
+                    }
+                    if(document.pressed == 'submitVolume')
+                    {
+                        submitVolume();
+                    }
+                    else {
+                        if(document.pressed == 'submitWeight')
+                        {
+                            submitWeight();
+                        }
+                    }
+                    return true;
+                }
+
+                function submitLength() {
+                    //input unit
+
+                    var inUnit = $("#beforeLengthConversion").selected.valueOf();
+
+                    console.log("input unit is " + inUnit);
+                    //ouput unit
+                    var outUnit = $("#afterLengthConversion").selected.ValueOf();
+                    //number of units
+                    var inQuantity = 0.0;
+
+                    $("#getForm").attr('action', '/services/' + inUnit + '/' + outUnit + '/' + inQuantity);
+                }
+
+                function submitVolume() {
+
+
+                }
+
+                function submitWeight() {
+
+
+                }
+
+            })
+
         </script>
     </head>
 <body>
@@ -36,7 +95,8 @@
 
         <div class="col-sm-6" style="background-color:lavenderblush;">
             <h2>Measurement Converters</h2>
-            <form action="converter/services/" method="GET" class="form-inline">
+            <form method="GET" class="form-inline" id="getForm">
+
                 <div class="radio">
                     <label><input type="radio" name="optOutput" value="text" checked>Text</label>
                 </div>
@@ -72,11 +132,9 @@
                 <select id="afterLengthConversion" name="afterLengthConversion">
                 </select>
 
-                <button type="submit" name="submit" value="search" class="btn btn-primary">Search</button>
-            <!--</form> -->
+                <button type="submit" id="submitLength" name="submit" value="search" class="btn btn-primary">Search</button>
 
             <h3>Volume</h3>
-            <!-- <form id="beforeVol" class="form-inline"> -->
 
                 <label for="beforeVolumeConversion">Choose Units</label>
                 <select id="beforeVolumeConversion" name="beforeVolumeConversion" onchange="populate(this.id, 'afterVolumeConversion')">
@@ -97,11 +155,9 @@
                 <label for="afterVolumeConversion">Change To New Units</label>
                 <select id="afterVolumeConversion" name="afterLengthConversion">
                 </select>
-                <button type="submit" name="submit" value="search" class="btn btn-primary">Search</button>
-            <!--</form>-->
+                <button type="submit" id="submitVolume" name="submit" value="search" class="btn btn-primary">Search</button>
 
             <h3>Weight</h3>
-            <!--<form id="beforeWgt" class="form-inline">-->
 
                 <label for="beforeWeightConversion">Choose Units</label>
                 <select id="beforeWeightConversion" name="beforeWeightConversion" onchange="populate(this.id, 'afterWeightConversion')">
@@ -123,7 +179,7 @@
                 <select id="afterWeightConversion" name="afterWeightConversion">
                 </select>
 
-                <button type="submit" name="submit" value="search" class="btn btn-primary">Search</button>
+                <button type="submit" id="submitWeight" name="submit" value="search" class="btn btn-primary">Search</button>
 
                 <h3>Results</h3>
                 <div class="form-group">
