@@ -28,7 +28,7 @@ class LengthConverterTest {
     }
 
     @Test
-    void convertInchesToMileSuccess() {
+    void convertInchesToMilesSuccess() {
 
         LengthConverter converter = new LengthConverter();
         Double result = converter.convertUnits("inches", "miles", 63360.0) ;
@@ -211,9 +211,352 @@ class LengthConverterTest {
         assertEquals((Double)0.9144, result);
     }
 
+    @Test
+    void convertMilesToInchesSuccess() {
 
 
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("miles", "inches", 1.0) ;
 
+        assertEquals((Double)63360.0, result);
+    }
+
+    @Test
+    void convertMilesToFeetSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("miles", "feet", 1.0) ;
+
+        assertEquals((Double)5280.0, result);
+    }
+
+    @Test
+    void convertMilesToYardsSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("miles", "yards", 1.0) ;
+
+        assertEquals((Double)1760.0, result);
+    }
+
+    @Test
+    void convertMilesToMillimetersSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("miles", "mm", 1.0) ;
+
+        assertEquals((Double)1.609e+6, result);
+    }
+    @Test
+    void convertMilesToCentimetersSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("miles", "cm", 1.0) ;
+
+        assertEquals((Double)160.934, result);
+    }
+
+    @Test
+    void convertMilesToMetersSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("miles", "meters", 1.0) ;
+
+        assertEquals((Double)1609.34, result);
+    }
+    @Test
+    void convertMilesToKilometersSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("miles", "km", 1.0) ;
+
+        assertEquals((Double)1.60934, result);
+    }
+    @Test
+    void convertMillimetersToInchesSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("mm", "inches", 25.4) ;
+
+        assertEquals((Double)1.0, result);
+    }
+
+    @Test
+    void convertMillimetersToFeetSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("mm", "feet", 304.8) ;
+
+        assertEquals((Double)1.0, result);
+    }
+    @Test
+    void convertMillimetersToYardsSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("mm", "yards", 914.4) ;
+
+        assertEquals((Double)1.0, result);
+    }
+
+    @Test
+    void convertMillimetersToMilesSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("mm", "miles", 200000.0) ;
+
+        assertEquals((Double)0.124274238, result);
+    }
+
+    @Test
+    void convertMillimetersToCentimetersSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("mm", "cm", 200000.0) ;
+
+        assertEquals((Double)20000.0, result);
+    }
+
+    @Test
+    void convertMillimetersToMetersSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("mm", "meters", 4000.0) ;
+
+        assertEquals((Double)4.0, result);
+    }
+
+    @Test
+    void convertMillimetersToKilometersSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("mm", "km", 200000.0) ;
+
+        assertEquals((Double)0.2, result);
+    }
+
+    @Test
+    void convertCentimetersToInchesSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("cm", "inches", 5.08) ;
+
+        assertEquals((Double)2.0, result);
+    }
+
+    @Test
+    void convertCentimetersToFeetSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("cm", "feet", 60.96) ;
+
+        assertEquals((Double)2.0, result);
+    }
+
+    @Test
+    void convertCentimetersToYardsSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("cm", "yards", 91.44) ;
+
+        assertEquals((Double)1.0, result);
+    }
+
+    @Test
+    void convertCentimetersToMilesSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("cm", "miles", 20000.0) ;
+
+        assertEquals((Double)0.124274238, result);
+    }
+
+    @Test
+    void convertCentimetersToMillimetersSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("cm", "mm", 2000.0) ;
+
+        assertEquals((Double)20000.0, result);
+    }
+
+    @Test
+    void convertCentimetersToMetersSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("cm", "meters", 400.0) ;
+
+        assertEquals((Double)4.0, result);
+    }
+
+    @Test
+    void convertCentimetersToKilometersSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("cm", "km", 20000.0) ;
+
+        assertEquals((Double)0.2, result);
+    }
+
+    @Test
+    void convertMetersToInchesSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("meters", "inches", 1.0) ;
+
+        assertEquals((Double)0.0254, result);
+    }
+
+    @Test
+    void convertMetersToFeetSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("meters", "feet", 609.6) ;
+
+        assertEquals((Double)2.0, result);
+    }
+
+    @Test
+    void convertMetersToYardsSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("meters", "yards", 1.0) ;
+
+        assertEquals((Double)1.09361, result);
+    }
+
+    @Test
+    void convertMetersToMilesSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("meters", "miles", 1000.0) ;
+
+        assertEquals((Double)0.621371, result);
+    }
+
+    @Test
+    void convertMetersToMillimetersSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("meters", "mm", 20.0) ;
+
+        assertEquals((Double)20000.0, result);
+    }
+
+    @Test
+    void convertMetersToCentimetersSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("meters", "cm", 4.0) ;
+
+        assertEquals((Double)400.0, result);
+    }
+
+    @Test
+    void convertMetersToKilometersSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("meters", "km", 200000.0) ;
+
+        assertEquals((Double)200.0, result);
+    }
+
+
+    @Test
+    void convertKilometersToInchesSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("km", "inches", 3.0) ;
+
+        assertEquals((Double)118110.0, result);
+    }
+
+    @Test
+    void convertKilometersToFeetSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("km", "feet", .6096) ;
+
+        assertEquals((Double)2000.0, result);
+    }
+
+    @Test
+    void convertKilometersToYardsSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("km", "yards", 0.9144) ;
+
+        assertEquals((Double)1000.0, result);
+    }
+
+    @Test
+    void convertKilometersToMilesSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("km", "miles", 200.0) ;
+
+        assertEquals((Double)124.274238, result);
+    }
+
+    @Test
+    void convertKilometersToMillimetersSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("km", "mm", 2.0) ;
+
+        assertEquals((Double)2000000.0, result);
+    }
+
+    @Test
+    void convertKilometersToCentimetersSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("km", "cm", 2.0) ;
+
+        assertEquals((Double)200000.0, result);
+    }
+
+    @Test
+    void convertKilometersToMetersSuccess() {
+
+
+        LengthConverter converter = new LengthConverter();
+        Double result = converter.convertUnits("km", "meters", 2.0) ;
+
+        assertEquals((Double)2000.0, result);
+    }
 
     @Test
     void getLengthHTML() {
