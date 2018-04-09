@@ -52,12 +52,5 @@ class VolumeConverterTest {
         assertEquals((Double)0.0295735, result);
     }
 
-    @Test
-    void getLengthHTML() {
-    }
-
-    @Test
-    void getLengthJSON() {
-    }
 }
 

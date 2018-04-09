@@ -51,12 +51,4 @@ class WeightConverterTest {
         assertEquals((Double)0.0283495, result);
     }
 
-    @Test
-    void getLengthHTML() {
-    }
-
-    @Test
-    void getLengthJSON() {
-    }
-
 }

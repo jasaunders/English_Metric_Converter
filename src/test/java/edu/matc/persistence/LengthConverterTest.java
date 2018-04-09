@@ -558,11 +558,4 @@ class LengthConverterTest {
         assertEquals((Double)2000.0, result);
     }
 
-    @Test
-    void getLengthHTML() {
-    }
-
-    @Test
-    void getLengthJSON() {
-    }
 }
