@@ -98,8 +98,11 @@ public class LengthConverter {
         Double convertedQuantity = convertUnits(inUnit, outUnit, quantity);
 
         if (output.length() == 0) {
-            output = "{\n    " + inUnit + " : " + quantity + ",\n    "
-                    + outUnit + " : " + convertedQuantity + "\n" + "}";
+            output = "{ \"inUnit\" : " + inUnit + ",\n"
+                    + "\"outUnit\" : " + outUnit + ",\n"
+                    + "\"quantity\" : " + quantity + ",\n"
+                    + "\"convertedQuantity\" : " + convertedQuantity + "\n"
+                    + "}";
         }
         return Response.status(200).entity(output).build();
 

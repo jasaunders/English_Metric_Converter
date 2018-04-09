@@ -2,7 +2,6 @@
 <html>
     <head>
 
-
         <script type="text/javascript">
 
                 function populate(s1, s2) {
@@ -26,60 +25,7 @@
                         if (newS1.value !== newOption.value)
                             newS2.options.add(newOption);
                     }
-
-
                 }
-
-
-                $(document).ready(function() {
-
-                $('#submitLength').click(function(){
-
-                    var inUnit = $("#beforeLengthConversion").selected.valueOf();
-
-                    console.log("input unit is " + inUnit);
-                    //ouput unit
-                    var outUnit = $("#afterLengthConversion").selected.ValueOf();
-                    //number of units
-                    var inQuantity = 0.0;
-
-                    $('#getForm').attr('action', 'services/' + inUnit + '/' + outUnit + '/' + inQuantity);
-                    console.log("url is " + $('#getForm').action.valueOf());
-                });
-
-
-
-            /*    $("#submitVolume").attr("onclick","submitVolume");
-                $("#submitWeight").attr("onclick","submitWeight");
-
-
-
-                function submitLength() {
-                    //input unit
-
-                    var inUnit = $("#beforeLengthConversion").selected.valueOf();
-
-                    console.log("input unit is " + inUnit);
-                    //ouput unit
-                    var outUnit = $("#afterLengthConversion").selected.ValueOf();
-                    //number of units
-                    var inQuantity = 0.0;
-
-                    $("#getForm").attr('action', '/services/' + inUnit + '/' + outUnit + '/' + inQuantity).submit();
-                }
-
-                function submitVolume() {
-
-
-                }
-
-                function submitWeight() {
-
-
-                } */
-
-            })
-
         </script>
     </head>
 <body>
@@ -88,6 +34,93 @@
 
 
     <div>
+        <div>
+            <h1>English Metric Converter</h1>
+            <p> Convert any English or Metric unit to another unit quickly and easily. Data is available in plain text, html and JSON format</p>
+
+
+            <h2>Length Converter</h2>
+
+               <p> Description: </p>
+
+            <p>Convert any length to another unit by providing the input Unit, output Unit and quantity to convert.</p>
+
+            <p>API call:</p>
+
+            <p>http://18.216.71.249:8080/English_Metric_Converter/services/length/{response_type}/{input_units}/{output_units}/{quantity}</p>
+
+
+            <p>  Parameters:</p>
+
+            <p> <b>response_type</b> format of the output data requested.</p>
+
+            <p> <b>input_units</b> unit of measure to be converted.</p>
+
+            <p> <b>output_units</b> unit of measure to be returned in the response.</p>
+
+            <p> <b>quantity</b> the number of units to be converted.</p>
+
+
+            <p> Exmaples of API calls:</p>
+
+            <p> <a href="http://18.216.71.249:8080/English_Metric_Converter/services/length/json/inches/feet/12"></a></p>
+
+            <p> Example of API response:</p>
+
+            <pre> {
+                inches : 12.0,
+                feet : 1.0
+                }
+            </pre>
+
+
+            <p> Parameters:</p>
+
+
+            <p> <code>date</code> date</p>
+            <p> <code>date</code> date</p>
+            <p> <code>date</code> date</p>
+            <p> <code>date</code> date</p>
+
+            <table>
+               <caption>Unit Options</caption>
+                <th>
+                    <td>Abbreviation</td>
+                    <td>Unit Description</td>
+                </th>
+                <tr>
+                    <td>inches</td>
+                    <td>inches</td>
+                </tr>
+                <tr>
+                    <td>feet</td>
+                    <td>feet</td>
+                </tr>
+                <tr>
+                    <td>yards</td>
+                    <td>yards</td>
+                </tr>
+                <tr>
+                    <td>miles</td>
+                    <td>miles</td>
+                </tr>
+                <tr>
+                    <td>mm</td>
+                    <td>millimeters</td>
+                </tr>
+                <tr>
+
+                </tr>
+                <tr>
+
+                </tr>
+                <tr>
+
+                </tr>
+            </table>
+
+            <p> <b>inches</b> format of the output data requested.</p>
+        </div>
         <div class="col-sm-3"></div>
 
         <div class="col-sm-6" style="background-color:lavenderblush;">
