@@ -194,7 +194,7 @@ public class WeightConverter {
 
             case ("lbs") : return (quantity / 7000);
 
-            case ("tons") : return (quantity / 1400000);
+            case ("tons") : return (quantity / 14000000);
 
             case ("grams") : return (quantity * 0.0647989);
 
@@ -218,7 +218,7 @@ public class WeightConverter {
 
             case ("lbs") : return (quantity * 2000);
 
-            case ("grains") : return (quantity * 1400000);
+            case ("grains") : return (quantity * 14000000);
 
             case ("grams") : return (quantity * 907185);
 

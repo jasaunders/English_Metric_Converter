@@ -98,7 +98,7 @@ class LengthConverterTest {
 
         LengthConverter converter = new LengthConverter();
         Double result = converter.convertUnits("feet", "miles", 5280.0) ;
-
+        result = (Math.round(result * 10000.0) /10000.0);
         assertEquals((Double)1.0, result);
     }
 
@@ -108,7 +108,7 @@ class LengthConverterTest {
 
         LengthConverter converter = new LengthConverter();
         Double result = converter.convertUnits("feet", "mm", 3.0) ;
-
+        result = (Math.round(result * 10000.0) /10000.0);
         assertEquals((Double)914.4, result);
     }
 
@@ -128,7 +128,7 @@ class LengthConverterTest {
 
         LengthConverter converter = new LengthConverter();
         Double result = converter.convertUnits("feet", "meters", 3.0) ;
-
+        result = (Math.round(result * 10000.0) /10000.0);
         assertEquals((Double)0.9144, result);
     }
 
@@ -137,7 +137,7 @@ class LengthConverterTest {
 
         LengthConverter converter = new LengthConverter();
         Double result = converter.convertUnits("feet", "km", 6500.0) ;
-
+        result = (Math.round(result * 10000.0) /10000.0);
         assertEquals((Double)1.9812, result);
     }
 
@@ -167,7 +167,7 @@ class LengthConverterTest {
 
         LengthConverter converter = new LengthConverter();
         Double result = converter.convertUnits("yards", "miles", 1760.0) ;
-
+        result = (Math.round(result * 10000.0) /10000.0);
         assertEquals((Double)1.0, result);
     }
 
@@ -256,8 +256,8 @@ class LengthConverterTest {
 
         LengthConverter converter = new LengthConverter();
         Double result = converter.convertUnits("miles", "cm", 1.0) ;
-
-        assertEquals((Double)160.934, result);
+        result = (Math.round(result * 10000.0) /10000.0);
+        assertEquals((Double)160934.0, result);
     }
 
     @Test
@@ -284,7 +284,7 @@ class LengthConverterTest {
 
         LengthConverter converter = new LengthConverter();
         Double result = converter.convertUnits("mm", "inches", 25.4) ;
-
+        result = (Math.round(result * 10000.0) /10000.0);
         assertEquals((Double)1.0, result);
     }
 
@@ -294,7 +294,7 @@ class LengthConverterTest {
 
         LengthConverter converter = new LengthConverter();
         Double result = converter.convertUnits("mm", "feet", 304.8) ;
-
+        result = (Math.round(result * 10000.0) /10000.0);
         assertEquals((Double)1.0, result);
     }
     @Test
@@ -303,7 +303,7 @@ class LengthConverterTest {
 
         LengthConverter converter = new LengthConverter();
         Double result = converter.convertUnits("mm", "yards", 914.4) ;
-
+        result = (Math.round(result * 10000.0) /10000.0);
         assertEquals((Double)1.0, result);
     }
 
@@ -313,8 +313,8 @@ class LengthConverterTest {
 
         LengthConverter converter = new LengthConverter();
         Double result = converter.convertUnits("mm", "miles", 200000.0) ;
-
-        assertEquals((Double)0.124274238, result);
+        result = (Math.round(result * 10000.0) /10000.0);
+        assertEquals((Double)0.1243, result);
     }
 
     @Test
@@ -343,7 +343,7 @@ class LengthConverterTest {
 
         LengthConverter converter = new LengthConverter();
         Double result = converter.convertUnits("mm", "km", 200000.0) ;
-
+        result = (Math.round(result * 10000.0) /10000.0);
         assertEquals((Double)0.2, result);
     }
 
@@ -353,7 +353,7 @@ class LengthConverterTest {
 
         LengthConverter converter = new LengthConverter();
         Double result = converter.convertUnits("cm", "inches", 5.08) ;
-
+        result = (Math.round(result * 10000.0) /10000.0);
         assertEquals((Double)2.0, result);
     }
 
@@ -363,7 +363,7 @@ class LengthConverterTest {
 
         LengthConverter converter = new LengthConverter();
         Double result = converter.convertUnits("cm", "feet", 60.96) ;
-
+        result = (Math.round(result * 10000.0) /10000.0);
         assertEquals((Double)2.0, result);
     }
 
@@ -373,7 +373,7 @@ class LengthConverterTest {
 
         LengthConverter converter = new LengthConverter();
         Double result = converter.convertUnits("cm", "yards", 91.44) ;
-
+        result = (Math.round(result * 10000.0) /10000.0);
         assertEquals((Double)1.0, result);
     }
 
@@ -383,8 +383,8 @@ class LengthConverterTest {
 
         LengthConverter converter = new LengthConverter();
         Double result = converter.convertUnits("cm", "miles", 20000.0) ;
-
-        assertEquals((Double)0.124274238, result);
+        result = (Math.round(result * 10000.0) /10000.0);
+        assertEquals((Double)0.1243, result);
     }
 
     @Test
@@ -423,8 +423,8 @@ class LengthConverterTest {
 
         LengthConverter converter = new LengthConverter();
         Double result = converter.convertUnits("meters", "inches", 1.0) ;
-
-        assertEquals((Double)0.0254, result);
+        result = (Math.round(result * 10000.0) /10000.0);
+        assertEquals((Double)39.3701, result);
     }
 
     @Test
@@ -433,8 +433,8 @@ class LengthConverterTest {
 
         LengthConverter converter = new LengthConverter();
         Double result = converter.convertUnits("meters", "feet", 609.6) ;
-
-        assertEquals((Double)2.0, result);
+        result = (Math.round(result * 1000.0) /1000.0);
+        assertEquals((Double)2000.0, result);
     }
 
     @Test
@@ -494,8 +494,8 @@ class LengthConverterTest {
 
         LengthConverter converter = new LengthConverter();
         Double result = converter.convertUnits("km", "inches", 3.0) ;
-
-        assertEquals((Double)118110.0, result);
+        result = (Math.round(result * 10000.0) /10000.0);
+        assertEquals((Double)118110.3, result);
     }
 
     @Test
@@ -504,7 +504,7 @@ class LengthConverterTest {
 
         LengthConverter converter = new LengthConverter();
         Double result = converter.convertUnits("km", "feet", .6096) ;
-
+        result = (Math.round(result * 1000.0) /1000.0);
         assertEquals((Double)2000.0, result);
     }
 
@@ -514,7 +514,7 @@ class LengthConverterTest {
 
         LengthConverter converter = new LengthConverter();
         Double result = converter.convertUnits("km", "yards", 0.9144) ;
-
+        result = (Math.round(result * 10000.0) /10000.0);
         assertEquals((Double)1000.0, result);
     }
 
@@ -524,8 +524,8 @@ class LengthConverterTest {
 
         LengthConverter converter = new LengthConverter();
         Double result = converter.convertUnits("km", "miles", 200.0) ;
-
-        assertEquals((Double)124.274238, result);
+        result = (Math.round(result * 10000.0) /10000.0);
+        assertEquals((Double)124.2742, result);
     }
 
     @Test
