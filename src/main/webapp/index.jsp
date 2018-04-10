@@ -70,9 +70,14 @@
 
                 <h3> Exmaples of API calls:</h3>
 
-                <p>http://18.216.71.249:8080/English_Metric_Converter/services/length/json/inches/feet/12</p>
+                <p>
+                    <a href="http://18.216.71.249:8080/English_Metric_Converter/services/length/json/inches/feet/12">
+                        http://18.216.71.249:8080/English_Metric_Converter/services/length/json/inches/feet/12</a>
+                    <a href="http://18.216.71.249:8080/English_Metric_Converter/services/length/text/feet/meters/5">
+                        http://18.216.71.249:8080/English_Metric_Converter/services/length/text/feet/meters/5</a>
+                </p>
 
-                <h3> Example of API response:</h3>
+                <h3> Example of API JSON response:</h3>
 
                 <pre> { "inUnit" : "inches",
 "outUnit" : "feet",
@@ -156,16 +161,15 @@
 
                 <h3> Exmaples of API calls:</h3>
 
-                <p>http://18.216.71.249:8080/English_Metric_Converter/services/weight/json/oz/lbs/12</p>
+                <p><a href="http://18.216.71.249:8080/English_Metric_Converter/services/weight/json/oz/lbs/12">
+                    http://18.216.71.249:8080/English_Metric_Converter/services/weight/json/oz/lbs/12 </a>
+                    <a href="http://18.216.71.249:8080/English_Metric_Converter/services/weight/html/grams/oz/100">
+                        http://18.216.71.249:8080/English_Metric_Converter/services/weight/html/grams/oz/12 </a>
+                </p>
 
-                <h3> Example of API response:</h3>
+                <h3> Example of API HTML response:</h3>
 
-                <pre> { "inUnit" : "oz",
-"outUnit" : "lbs",
-"quantity" : 12.0,
-"convertedQuantity" : 0.75
-}
-                </pre>
+                <pre><h3> 100.0 grams = 3.527399072294044 oz </h3></pre>
 
                 <h3> Parameters:</h3>
 
@@ -212,8 +216,88 @@
                     </table>
                 </div>
             </div>
+            <div>
+                <h2 class="section-header">Volume Converter</h2>
+
+                <h3> Description: </h3>
+
+                <p>Convert any volume to another unit by providing the input Unit, output Unit and quantity to convert.</p>
+
+                <h3>API call:</h3>
+
+                <p>http://18.216.71.249:8080/English_Metric_Converter/services/weight/{response_type}/{input_units}/{output_units}/{quantity}</p>
+
+
+                <h3>  Parameters:</h3>
+
+                <ul>
+                    <li> <strong>response_type</strong> format of the output data requested.</li>
+                    <li> <strong>input_units</strong> unit of measure to be converted.</li>
+                    <li> <strong>output_units</strong> unit of measure to be returned in the response.</li>
+                    <li> <strong>quantity</strong> the number of units to be converted.</li>
+                </ul>
+
+                <h3> Exmaples of API calls:</h3>
+
+                <p><a href="http://18.216.71.249:8080/English_Metric_Converter/services/volume/json/ozfl/cups/12">
+                    http://18.216.71.249:8080/English_Metric_Converter/services/volume/json/ozfl/cups/12 </a>
+
+                    <a href="http://18.216.71.249:8080/English_Metric_Converter/services/volume/text/ml/cups/100">
+                        http://18.216.71.249:8080/English_Metric_Converter/services/volume/text/ml/cups/100 </a></p>
+
+                <h3> Example of API Plain Text response:</h3>
+
+                <pre>
+
+            100.0 ml =  0.42267570629110524 cups
+
+                </pre>
+
+                <h3> Parameters:</h3>
+
+                <p> <code>input_units</code> The unit of measure to be converted. </p>
+                <p> <code>output_units</code> The unit of measure that input units will be converted to.</p>
+                <p> <code>quantity</code> The number of units to be convert.</p>
+                <p> <code>converted_quantity</code> The equivalent number of output units.</p>
+
+                <h5> Use the following abbreviations for input and output units when submitting a request:</h5>
+
+                <div>
+
+                    <table class="table-striped table-bordered table-condensed table-responsive">
+
+                        <tr class="column-header-background">
+                            <th class="column-header">Abbreviation</th>
+                            <th class="column-header">Unit Description</th>
+                        </tr>
+                        <tr>
+                            <td>ozfl</td>
+                            <td>fluid ounces</td>
+                        </tr>
+                        <tr>
+                            <td>tsp</td>
+                            <td>teaspoon</td>
+                        </tr>
+                        <tr>
+                            <td>cups</td>
+                            <td>cups</td>
+                        </tr>
+                        <tr>
+                            <td>ml</td>
+                            <td>mililiter</td>
+                        </tr>
+
+                        <tr>
+                            <td>liters</td>
+                            <td>liters</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </div>
         <div class="col-sm-3"></div>
+    </div>
+        <!-- beginning of form div -->
         <div class="col-sm-3"></div>
 
         <div class="col-sm-6" style="background-color:lavenderblush;">
