@@ -30,64 +30,63 @@
     </head>
 <body>
 
-<div>
+<div class="container">
 
 
     <div>
-        <div>
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
             <h1>English Metric Converter</h1>
             <p> Convert any English or Metric unit to another unit quickly and easily. Data is available in plain text, html and JSON format</p>
 
 
             <h2>Length Converter</h2>
 
-               <p> Description: </p>
+            <h3> Description: </h3>>
 
             <p>Convert any length to another unit by providing the input Unit, output Unit and quantity to convert.</p>
 
-            <p>API call:</p>
+            <h3>API call:</h3>
 
             <p>http://18.216.71.249:8080/English_Metric_Converter/services/length/{response_type}/{input_units}/{output_units}/{quantity}</p>
 
 
-            <p>  Parameters:</p>
+            <h3>  Parameters:</h3>
 
-            <p> <b>response_type</b> format of the output data requested.</p>
+            <ul>
+                <li> <strong>response_type</strong> format of the output data requested.</li>
+                <li> <strong>input_units</strong> unit of measure to be converted.</li>
+                <li> <strong>output_units</strong> unit of measure to be returned in the response.</li>
+                <li> <strong>quantity</strong> the number of units to be converted.</li>
+            </ul>
 
-            <p> <b>input_units</b> unit of measure to be converted.</p>
+            <h3> Exmaples of API calls:</h3>
 
-            <p> <b>output_units</b> unit of measure to be returned in the response.</p>
+            <p>http://18.216.71.249:8080/English_Metric_Converter/services/length/json/inches/feet/12</p>
 
-            <p> <b>quantity</b> the number of units to be converted.</p>
+            <h3> Example of API response:</h3>
 
-
-            <p> Exmaples of API calls:</p>
-
-            <p> <a href="http://18.216.71.249:8080/English_Metric_Converter/services/length/json/inches/feet/12"></a></p>
-
-            <p> Example of API response:</p>
-
-            <pre> {
-                inches : 12.0,
-                feet : 1.0
+            <pre> {get new code when Dennis deploys
                 }
             </pre>
 
 
-            <p> Parameters:</p>
+            <h3> Parameters:</h3>
 
 
-            <p> <code>date</code> date</p>
-            <p> <code>date</code> date</p>
-            <p> <code>date</code> date</p>
-            <p> <code>date</code> date</p>
+            <p> <code>input_units</code> The unit of measure to be converted. </p>
+            <p> <code>output_units</code> The unit of measure that input units will be converted to.</p>
+            <p> <code>quantity</code> The number of units to be convert.</p>
+            <p> <code>converted_quantity</code> The equivalent number of output units.</p>
 
-            <table>
+            <h3> Use the following abbreviations for input and output units when submitting a request:</h3>
+
+            <table class="table-view">
                <caption>Unit Options</caption>
-                <th>
-                    <td>Abbreviation</td>
-                    <td>Unit Description</td>
-                </th>
+                <tr class="column-header-background">
+                    <th class="column-header">Abbreviation</th>
+                    <th class="column-header">Unit Description</th>
+                </tr>
                 <tr>
                     <td>inches</td>
                     <td>inches</td>
@@ -109,18 +108,21 @@
                     <td>millimeters</td>
                 </tr>
                 <tr>
-
+                    <td>cm</td>
+                    <td>centimeters</td>
                 </tr>
                 <tr>
-
+                    <td>meters</td>
+                    <td>meters</td>
                 </tr>
                 <tr>
-
+                    <td>km</td>
+                    <td>kilometers</td>
                 </tr>
             </table>
 
-            <p> <b>inches</b> format of the output data requested.</p>
         </div>
+        <div class="col-sm-3"></div>
         <div class="col-sm-3"></div>
 
         <div class="col-sm-6" style="background-color:lavenderblush;">
