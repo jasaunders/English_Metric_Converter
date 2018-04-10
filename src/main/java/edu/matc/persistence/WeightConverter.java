@@ -65,8 +65,7 @@ public class WeightConverter {
         Double convertedQuantity = convertUnits(inUnit, outUnit, quantity);
 
         if (output.length() == 0) {
-            output = "<html> <title>length converter</title> "
-                    + "<body><h1>"
+            output = "<h1>"
                     + quantity
                     + " "
                     + inUnit
@@ -74,7 +73,7 @@ public class WeightConverter {
                     + convertedQuantity
                     + " "
                     + outUnit
-                    + "</h1></body></html>";
+                    + "</h1>";
         }
         return Response.status(200).entity(output).build();
 
@@ -99,8 +98,11 @@ public class WeightConverter {
         String output = "";
         Double convertedQuantity = convertUnits(inUnit, outUnit, quantity);
         if (output.length() == 0) {
-            output = "{\n    " + inUnit + " : " + quantity + ",\n    "
-                    + outUnit + " : " + convertedQuantity + "\n" + "}";
+            output = "{ \"inUnit\" : " + "\"" + inUnit + "\",\n"
+                    + "\"outUnit\" : " + "\"" + outUnit + "\",\n"
+                    + "\"quantity\" : " + quantity + ",\n"
+                    + "\"convertedQuantity\" : " + convertedQuantity + "\n"
+                    + "}";
         }
         return Response.status(200).entity(output).build();
 

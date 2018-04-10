@@ -62,8 +62,7 @@ public class LengthConverter {
         Double convertedQuantity = convertUnits(inUnit, outUnit, quantity);
 
         if (output.length() == 0) {
-             output = "<html> <title>length converter</title> "
-                    + "<body><h1>"
+             output = "<h1>"
                     + quantity
                     + " "
                     + inUnit
@@ -71,7 +70,7 @@ public class LengthConverter {
                     + convertedQuantity
                     + " "
                     + outUnit
-                    + "</h1></body></html>";
+                    + "</h1>";
         }
         return Response.status(200).entity(output).build();
 
@@ -98,8 +97,8 @@ public class LengthConverter {
         Double convertedQuantity = convertUnits(inUnit, outUnit, quantity);
 
         if (output.length() == 0) {
-            output = "{ \"inUnit\" : " + inUnit + ",\n"
-                    + "\"outUnit\" : " + outUnit + ",\n"
+            output = "{ \"inUnit\" : " + "\"" + inUnit + "\",\n"
+                    + "\"outUnit\" : " + "\"" + outUnit + "\",\n"
                     + "\"quantity\" : " + quantity + ",\n"
                     + "\"convertedQuantity\" : " + convertedQuantity + "\n"
                     + "}";

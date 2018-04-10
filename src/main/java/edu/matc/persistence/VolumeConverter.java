@@ -64,17 +64,16 @@ public class VolumeConverter {
         Double convertedQuantity = convertUnits(inUnit, outUnit, quantity);
 
 
-            if (output.length() == 0) {
-                output = "<html> <title>length converter</title> "
-                        + "<body><h1>"
-                        + quantity
-                        + " "
-                        + inUnit
-                        + " = "
-                        + convertedQuantity
-                        + " "
-                        + outUnit
-                        + "</h1></body></html>";
+        if (output.length() == 0) {
+            output = "<h1>"
+                    + quantity
+                    + " "
+                    + inUnit
+                    + " = "
+                    + convertedQuantity
+                    + " "
+                    + outUnit
+                    + "</h1>";
         }
         return Response.status(200).entity(output).build();
 
@@ -99,9 +98,12 @@ public class VolumeConverter {
         String output = "";
         Double convertedQuantity = convertUnits(inUnit, outUnit, quantity);
 
-            if (output.length() == 0) {
-                output = "{\n    " + inUnit + " : " + quantity + ",\n    "
-                        + outUnit + " : " + convertedQuantity + "\n" + "}";
+        if (output.length() == 0) {
+            output = "{ \"inUnit\" : " + "\"" + inUnit + "\",\n"
+                    + "\"outUnit\" : " + "\"" + outUnit + "\",\n"
+                    + "\"quantity\" : " + quantity + ",\n"
+                    + "\"convertedQuantity\" : " + convertedQuantity + "\n"
+                    + "}";
         }
         return Response.status(200).entity(output).build();
 

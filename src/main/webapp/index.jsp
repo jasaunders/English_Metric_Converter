@@ -27,6 +27,13 @@
                     }
                 }
         </script>
+        <Style>
+            .section-header {background-color: aqua;
+                border-left: 6px solid aquamarine}
+            h1 {color:aquamarine}
+            h5 {color: blue}
+
+        </Style>
     </head>
 <body>
 
@@ -37,90 +44,174 @@
         <div class="col-sm-3"></div>
         <div class="col-sm-6">
             <h1>English Metric Converter</h1>
-            <p> Convert any English or Metric unit to another unit quickly and easily. Data is available in plain text, html and JSON format</p>
+            <h5> Convert any English or Metric unit to another unit quickly and easily. Data is available in plain text, html and JSON format.</h5>
 
 
-            <h2>Length Converter</h2>
+            <div>
+                <h2 class="section-header">Length Converter</h2>
 
-            <h3> Description: </h3>>
+                <h3> Description: </h3>
 
-            <p>Convert any length to another unit by providing the input Unit, output Unit and quantity to convert.</p>
+                <p>Convert any length to another unit by providing the input Unit, output Unit and quantity to convert.</p>
 
-            <h3>API call:</h3>
+                <h3>API call:</h3>
 
-            <p>http://18.216.71.249:8080/English_Metric_Converter/services/length/{response_type}/{input_units}/{output_units}/{quantity}</p>
-
-
-            <h3>  Parameters:</h3>
-
-            <ul>
-                <li> <strong>response_type</strong> format of the output data requested.</li>
-                <li> <strong>input_units</strong> unit of measure to be converted.</li>
-                <li> <strong>output_units</strong> unit of measure to be returned in the response.</li>
-                <li> <strong>quantity</strong> the number of units to be converted.</li>
-            </ul>
-
-            <h3> Exmaples of API calls:</h3>
-
-            <p>http://18.216.71.249:8080/English_Metric_Converter/services/length/json/inches/feet/12</p>
-
-            <h3> Example of API response:</h3>
-
-            <pre> {get new code when Dennis deploys
-                }
-            </pre>
+                <p>http://18.216.71.249:8080/English_Metric_Converter/services/length/{response_type}/{input_units}/{output_units}/{quantity}</p>
 
 
-            <h3> Parameters:</h3>
+                <h3>  Parameters:</h3>
+
+                <ul>
+                    <li> <strong>response_type</strong> format of the output data requested.</li>
+                    <li> <strong>input_units</strong> unit of measure to be converted.</li>
+                    <li> <strong>output_units</strong> unit of measure to be returned in the response.</li>
+                    <li> <strong>quantity</strong> the number of units to be converted.</li>
+                </ul>
+
+                <h3> Exmaples of API calls:</h3>
+
+                <p>http://18.216.71.249:8080/English_Metric_Converter/services/length/json/inches/feet/12</p>
+
+                <h3> Example of API response:</h3>
+
+                <pre> { "inUnit" : "inches",
+"outUnit" : "feet",
+"quantity" : 12.0,
+"convertedQuantity" : 1.0
+}
+                </pre>
+
+                <h3> Parameters:</h3>
+
+                <p> <code>input_units</code> The unit of measure to be converted. </p>
+                <p> <code>output_units</code> The unit of measure that input units will be converted to.</p>
+                <p> <code>quantity</code> The number of units to be convert.</p>
+                <p> <code>converted_quantity</code> The equivalent number of output units.</p>
+
+                <h5> Use the following abbreviations for input and output units when submitting a request:</h5>
+
+                <div>
+
+                    <table class="table-striped table-bordered table-condensed table-responsive">
+
+                        <tr class="column-header-background">
+                            <th class="column-header">Abbreviation</th>
+                            <th class="column-header">Unit Description</th>
+                        </tr>
+                        <tr>
+                            <td>inches</td>
+                            <td>inches</td>
+                        </tr>
+                        <tr>
+                            <td>feet</td>
+                            <td>feet</td>
+                        </tr>
+                        <tr>
+                            <td>yards</td>
+                            <td>yards</td>
+                        </tr>
+                        <tr>
+                            <td>miles</td>
+                            <td>miles</td>
+                        </tr>
+                        <tr>
+                            <td>mm</td>
+                            <td>millimeters</td>
+                        </tr>
+                        <tr>
+                            <td>cm</td>
+                            <td>centimeters</td>
+                        </tr>
+                        <tr>
+                            <td>meters</td>
+                            <td>meters</td>
+                        </tr>
+                        <tr>
+                            <td>km</td>
+                            <td>kilometers</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <h2 class="section-header">Weight Converter</h2>
+
+                <h3> Description: </h3>
+
+                <p>Convert any weight to another unit by providing the input Unit, output Unit and quantity to convert.</p>
+
+                <h3>API call:</h3>
+
+                <p>http://18.216.71.249:8080/English_Metric_Converter/services/weight/{response_type}/{input_units}/{output_units}/{quantity}</p>
 
 
-            <p> <code>input_units</code> The unit of measure to be converted. </p>
-            <p> <code>output_units</code> The unit of measure that input units will be converted to.</p>
-            <p> <code>quantity</code> The number of units to be convert.</p>
-            <p> <code>converted_quantity</code> The equivalent number of output units.</p>
+                <h3>  Parameters:</h3>
 
-            <h3> Use the following abbreviations for input and output units when submitting a request:</h3>
+                <ul>
+                    <li> <strong>response_type</strong> format of the output data requested.</li>
+                    <li> <strong>input_units</strong> unit of measure to be converted.</li>
+                    <li> <strong>output_units</strong> unit of measure to be returned in the response.</li>
+                    <li> <strong>quantity</strong> the number of units to be converted.</li>
+                </ul>
 
-            <table class="table-view">
-               <caption>Unit Options</caption>
-                <tr class="column-header-background">
-                    <th class="column-header">Abbreviation</th>
-                    <th class="column-header">Unit Description</th>
-                </tr>
-                <tr>
-                    <td>inches</td>
-                    <td>inches</td>
-                </tr>
-                <tr>
-                    <td>feet</td>
-                    <td>feet</td>
-                </tr>
-                <tr>
-                    <td>yards</td>
-                    <td>yards</td>
-                </tr>
-                <tr>
-                    <td>miles</td>
-                    <td>miles</td>
-                </tr>
-                <tr>
-                    <td>mm</td>
-                    <td>millimeters</td>
-                </tr>
-                <tr>
-                    <td>cm</td>
-                    <td>centimeters</td>
-                </tr>
-                <tr>
-                    <td>meters</td>
-                    <td>meters</td>
-                </tr>
-                <tr>
-                    <td>km</td>
-                    <td>kilometers</td>
-                </tr>
-            </table>
+                <h3> Exmaples of API calls:</h3>
 
+                <p>http://18.216.71.249:8080/English_Metric_Converter/services/weight/json/oz/lbs/12</p>
+
+                <h3> Example of API response:</h3>
+
+                <pre> { "inUnit" : "oz",
+"outUnit" : "lbs",
+"quantity" : 12.0,
+"convertedQuantity" : 0.75
+}
+                </pre>
+
+                <h3> Parameters:</h3>
+
+                <p> <code>input_units</code> The unit of measure to be converted. </p>
+                <p> <code>output_units</code> The unit of measure that input units will be converted to.</p>
+                <p> <code>quantity</code> The number of units to be convert.</p>
+                <p> <code>converted_quantity</code> The equivalent number of output units.</p>
+
+                <h5> Use the following abbreviations for input and output units when submitting a request:</h5>
+
+                <div>
+
+                    <table class="table-striped table-bordered table-condensed table-responsive">
+
+                        <tr class="column-header-background">
+                            <th class="column-header">Abbreviation</th>
+                            <th class="column-header">Unit Description</th>
+                        </tr>
+                        <tr>
+                            <td>oz</td>
+                            <td>ounces</td>
+                        </tr>
+                        <tr>
+                            <td>lbs</td>
+                            <td>pounds</td>
+                        </tr>
+                        <tr>
+                            <td>grains</td>
+                            <td>grains</td>
+                        </tr>
+                        <tr>
+                            <td>tons</td>
+                            <td>tons</td>
+                        </tr>
+
+                        <tr>
+                            <td>grams</td>
+                            <td>grams</td>
+                        </tr>
+                        <tr>
+                            <td>kilos</td>
+                            <td>kilograms</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </div>
         <div class="col-sm-3"></div>
         <div class="col-sm-3"></div>
