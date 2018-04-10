@@ -309,7 +309,7 @@ public class LengthConverter {
                 return (quantity * 3280.84);
 
             case ("yards"):
-                return (quantity * 1093.61);
+                return (quantity / 0.0009144);
 
             case ("miles"):
                 return (quantity * 0.621371);
