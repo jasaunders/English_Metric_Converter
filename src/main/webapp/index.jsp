@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="head.jsp"%>
 <html>
     <head>
@@ -37,7 +38,7 @@
     </head>
 <body>
 
-<div class="container">
+<div class="container-fluid">
 
 
     <div>
@@ -68,7 +69,7 @@
                     <li> <strong>quantity</strong> the number of units to be converted.</li>
                 </ul>
 
-                <h3> Exmaples of API calls:</h3>
+                <h3> Examples of API calls:</h3>
 
                 <p>
                     <a href="http://18.216.71.249:8080/English_Metric_Converter/services/length/json/inches/feet/12">
@@ -247,11 +248,7 @@
 
                 <h3> Example of API Plain Text response:</h3>
 
-                <pre>
-
-            100.0 ml =  0.42267570629110524 cups
-
-                </pre>
+                <pre><h3>100.0 ml =  0.42267570629110524 cups</h3></pre>
 
                 <h3> Parameters:</h3>
 
@@ -294,15 +291,18 @@
                     </table>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-3"></div>
-    </div>
-        <!-- beginning of form div -->
-        <div class="col-sm-3"></div>
 
-        <div class="col-sm-6" style="background-color:lavenderblush;">
+
+        <br />
+        <br />
+
+        <!-- beginning of form div -->
+
+
+
+        <div style="background-color:lavenderblush;">
             <h2>Measurement Converters</h2>
-            <form method="GET" class="form-inline" id="getForm">
+            <form method="get" class="form-inline" id="getForm">
 
                 <div class="radio">
                     <label><input type="radio" name="optOutput" value="text" checked>Text</label>
@@ -391,14 +391,16 @@
                 <h3>Results</h3>
                 <div class="form-group">
                     <label for="converterResult">Conversion Result</label>
-                    <input type="text" id="converterResult" name="converterResult"></input>
+                    <input type="text" id="converterResult" name="converterResult">
                 </div>
             </form>
-
-
+            <br />
+            <br />
+            <br />
         </div>
         <div class="col-sm-3"></div>
     </div>
+</div>
 </div>
 </body>
 </html>
