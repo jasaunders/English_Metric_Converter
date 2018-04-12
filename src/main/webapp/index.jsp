@@ -160,7 +160,7 @@
                     <li> <strong>quantity</strong> the number of units to be converted.</li>
                 </ul>
 
-                <h3> Exmaples of API calls:</h3>
+                <h3> Examples of API calls:</h3>
 
                 <p><a href="http://18.216.71.249:8080/English_Metric_Converter/services/weight/json/oz/lbs/12">
                     http://18.216.71.249:8080/English_Metric_Converter/services/weight/json/oz/lbs/12 </a>
@@ -238,7 +238,7 @@
                     <li> <strong>quantity</strong> the number of units to be converted.</li>
                 </ul>
 
-                <h3> Exmaples of API calls:</h3>
+                <h3> Examples of API calls:</h3>
 
                 <p><a href="http://18.216.71.249:8080/English_Metric_Converter/services/volume/json/ozfl/cups/12">
                     http://18.216.71.249:8080/English_Metric_Converter/services/volume/json/ozfl/cups/12 </a>
