@@ -10,13 +10,13 @@
 - [X] Code logic for front end
 - [X] Code logic for back end
 - [X] Refactor converters for the 4th time.
-- [ ] Unit testing
-- [ ] User Documentation- use index page and form to demo API
+- [X] Unit testing
+- [X] User Documentation- use index page and form to demo API
 - [ ] Modify Form Submit buttons to call API
-- [ ] Add API introductory paragraph
-- [ ] Add links below the form for the various API methods.
-- [ ] Java Documentation
-- [ ] Deploy to AWS (Dennis)
+- [X] Add API introductory paragraph
+- [X] Add links below the form for the various API methods.
+- [X] Java Documentation
+- [X] Deploy to AWS (Dennis)
 ### Week 12
-- [ ] Practise Demo SOAP UI 
-- [ ] Presentation
+- [X] Practise Demo SOAP UI 
+- [X] Presentation

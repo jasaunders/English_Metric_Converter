@@ -18,6 +18,6 @@
 - Update project plan (Joanne)
 - Refactor Length Converter class for Java Best Practises.
 ###Week Three (week12):
-
+- Made final adjustments to align HTML on index page. (Dennis)
 
 
