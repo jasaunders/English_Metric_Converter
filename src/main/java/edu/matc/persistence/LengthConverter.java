@@ -27,7 +27,7 @@ public class LengthConverter {
     @Produces("text/plain")
     @Path("/text/{inUnit}/{outUnit}/{quantity}")
     public Response getLengthText(
-            @PathParam("before") String inUnit,
+            @PathParam("inUnit") String inUnit,
             @PathParam("outUnit") String outUnit,
             @PathParam("quantity") double quantity) {
 
